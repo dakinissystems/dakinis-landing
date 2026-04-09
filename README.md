@@ -41,12 +41,16 @@ npm run preview  # sirve el build de producción localmente
 ## Estructura del proyecto
 
 ```
-├── public/                 # assets estáticos (SVGs auxiliares, etc.)
+├── public/
+│   └── brands/             # logos servidos como estáticos (no pasan por el bundle JS)
 ├── src/
-│   ├── App.jsx             # monta la landing
-│   ├── LandingPage.jsx     # secciones y contenido principal
-│   ├── main.jsx            # entrada React
-│   └── index.css           # Tailwind + estilos base
+│   ├── components/         # BrandMark, SiteHeader, ProjectCard
+│   ├── config/site.js      # textos, enlaces, rutas de logos, contacto
+│   ├── lib/publicUrl.js    # URLs bajo `base` de Vite (GitHub Pages, etc.)
+│   ├── App.jsx
+│   ├── LandingPage.jsx
+│   ├── main.jsx
+│   └── index.css
 ├── index.html
 ├── vite.config.js
 ├── tailwind.config.js
@@ -54,9 +58,21 @@ npm run preview  # sirve el build de producción localmente
 └── package.json
 ```
 
-## Assets de marca
+## Assets de marca (`public/brands/`)
 
-En la raíz del proyecto hay imágenes usadas por la landing (logos Dakinis, proyectos, etc.). No las subas a repositorios públicos si contienen material confidencial; en ese caso usa variables de entorno o CDN privado.
+Los logos van aquí con nombres estables (`dakinis-logo-lg.jpeg`, `dakinis-logo-sm.jpeg`, `akoenet.png`, `stream-automator.png`) para:
+
+- **Mejor rendimiento**: no se incrustan PNG grandes en el bundle de JavaScript.
+- **Cache del CDN/navegador** como archivos estáticos.
+- **Rutas correctas** en subcarpetas del sitio vía `import.meta.env.BASE_URL` (`publicUrl()`).
+
+## Git: rama `Dakinis` vs `development` en el IDE
+
+Este proyecto tiene su propio repositorio en la carpeta **Dakini systems** (rama de trabajo habitual: **`Dakinis`**).
+
+Si Cursor o la terminal muestran la rama **`development`**, suele ser porque abriste como carpeta raíz el repo padre **`DEV`** (donde viven muchos proyectos). Ahí Git es otro repositorio y otra rama.
+
+**Recomendación:** abre en Cursor la carpeta `Dakini systems` como workspace raíz, o ejecuta `git status` dentro de esa carpeta para ver la rama **`Dakinis`** y el remoto **DakinisSystems**.
 
 ## Despliegue
 
