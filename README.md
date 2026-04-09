@@ -1,6 +1,6 @@
 # Dakinis Systems — Landing
 
-Sitio estático (React + Vite + Tailwind) para la landing de Dakinis Systems.
+Página corporativa (enterprise) en React + Vite + Tailwind para Dakinis Systems.
 
 ## Repositorio
 
