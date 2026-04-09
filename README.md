@@ -15,6 +15,7 @@ Landing corporativa para **Dakinis Systems**: empresa de **desarrollo de softwar
   - [AkoeNet](https://akoenet-frontend.onrender.com/)
   - [Streamer Scheduler / Stream Automator](https://streamautomator.com/dashboard)
 - Bloque de contacto (email y WhatsApp; actualiza URLs en el código si cambian)
+- **Idioma:** español e inglés (conmutador EN/ES en la cabecera, preferencia guardada en `localStorage`)
 
 ## Stack
 
@@ -45,7 +46,9 @@ npm run preview  # sirve el build de producción localmente
 │   └── brands/             # logos servidos como estáticos (no pasan por el bundle JS)
 ├── src/
 │   ├── components/         # BrandMark, SiteHeader, ProjectCard
-│   ├── config/site.js      # textos, enlaces, rutas de logos, contacto
+│   ├── config/site.js      # datos no traducidos (URLs, assets, orden de secciones)
+│   ├── i18n/translations.js # copys ES / EN
+│   ├── context/LanguageContext.jsx # idioma + persistencia
 │   ├── lib/publicUrl.js    # URLs bajo `base` de Vite (GitHub Pages, etc.)
 │   ├── App.jsx
 │   ├── LandingPage.jsx

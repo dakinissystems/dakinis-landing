@@ -1,4 +1,4 @@
-export function ProjectCard({ project }) {
+export function ProjectCard({ project, openProjectLabel, openAriaLabel }) {
   const { name, description, url, logoSrc, logoWidth, logoHeight } = project
 
   return (
@@ -8,7 +8,7 @@ export function ProjectCard({ project }) {
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
-        aria-label={`Abrir ${name} (se abre en una pestaña nueva)`}
+        aria-label={openAriaLabel}
       >
         <img
           src={logoSrc}
@@ -24,7 +24,7 @@ export function ProjectCard({ project }) {
         <div className="min-w-0 text-left">
           <h3 className="text-lg font-semibold text-cyan-300">{name}</h3>
           <p className="text-sm text-gray-400">{description}</p>
-          <p className="mt-1 text-xs text-cyan-400/90">Abrir proyecto</p>
+          <p className="mt-1 text-xs text-cyan-400/90">{openProjectLabel}</p>
         </div>
       </a>
     </article>
