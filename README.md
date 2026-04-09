@@ -66,13 +66,13 @@ Los logos van aquí con nombres estables (`dakinis-logo-lg.jpeg`, `dakinis-logo-
 - **Cache del CDN/navegador** como archivos estáticos.
 - **Rutas correctas** en subcarpetas del sitio vía `import.meta.env.BASE_URL` (`publicUrl()`).
 
-## Git: rama `Dakinis` vs `development` en el IDE
+## Git: rama `Development` vs `development` del repo padre
 
-Este proyecto tiene su propio repositorio en la carpeta **Dakini systems** (rama de trabajo habitual: **`Dakinis`**).
+Este proyecto tiene su propio repositorio en la carpeta **Dakini systems**. La rama de trabajo habitual es **`Development`** (existe también **`main`** en el mismo repo).
 
-Si Cursor o la terminal muestran la rama **`development`**, suele ser porque abriste como carpeta raíz el repo padre **`DEV`** (donde viven muchos proyectos). Ahí Git es otro repositorio y otra rama.
+Si Cursor o la terminal muestran la rama **`development`** en minúsculas, suele ser porque abriste como carpeta raíz el repo padre **`DEV`** (donde viven muchos proyectos). Ahí Git es otro repositorio y otra rama.
 
-**Recomendación:** abre en Cursor la carpeta `Dakini systems` como workspace raíz, o ejecuta `git status` dentro de esa carpeta para ver la rama **`Dakinis`** y el remoto **DakinisSystems**.
+**Recomendación:** abre en Cursor la carpeta `Dakini systems` como workspace raíz, o ejecuta `git status` dentro de esa carpeta para ver la rama **`Development`** y el remoto **DakinisSystems**.
 
 ## Despliegue
 
