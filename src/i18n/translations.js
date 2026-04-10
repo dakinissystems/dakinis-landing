@@ -190,4 +190,4 @@ export const translations = {
 }
 
 export const LOCALES = /** @type {const} */ (['en', 'es'])
-export const DEFAULT_LOCALE = /** @type {Locale} */ ('es')
+export const DEFAULT_LOCALE = /** @type {Locale} */ ('en')
