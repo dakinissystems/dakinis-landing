@@ -31,6 +31,6 @@ export const PROJECTS = [
 ]
 
 export const CONTACT = {
-  email: 'contacto@dakinis-systems.com',
+  email: 'dakinissystems@gmail.com',
   whatsappHref: 'https://wa.me/5490000000000',
 }
