@@ -25,6 +25,11 @@ export const translations = {
       body: 'En {name} creamos soluciones digitales personalizadas: aplicaciones web, backend, automatizaciones e infraestructura para ayudarte a crecer con tecnologia estable y escalable.',
       ctaPrimary: 'Empezar ahora',
       ctaSecondary: 'Ver servicios',
+      platformTitle: 'Plataforma modular para verticales',
+      platformBody:
+        'Tu landing en dakinissystems.onrender.com puede mostrar que Dakinis no es un solo caso, sino una plataforma modular configurable para verticales diferentes sin reescribir logica.',
+      platformNextStep:
+        'Siguiente paso: conectar ese selector al backend (/api/config?adapter=...) para que la demo muestre datos reales de la API y no solo del frontend, hasta subir D:\\Dakinis Scheduler + CRM + WhatsApp.',
     },
     services: {
       title: 'Servicios principales',
@@ -118,6 +123,11 @@ export const translations = {
       body: 'At {name} we build tailored digital solutions: web apps, backend, automation, and infrastructure so you can grow with stable, scalable technology.',
       ctaPrimary: 'Get started',
       ctaSecondary: 'View services',
+      platformTitle: 'Modular platform for multiple verticals',
+      platformBody:
+        'Your landing at dakinissystems.onrender.com can show Dakinis is not a single-use case, but a modular platform configurable for different verticals without rewriting core logic.',
+      platformNextStep:
+        'Next step: connect that selector to the backend (/api/config?adapter=...) so the demo shows real API data and not only frontend mocks, until D:\\Dakinis Scheduler + CRM + WhatsApp is uploaded.',
     },
     services: {
       title: 'Core services',

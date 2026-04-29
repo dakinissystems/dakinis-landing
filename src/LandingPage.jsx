@@ -43,6 +43,12 @@ export default function LandingPage() {
             {t.hero.body.replace('{name}', SITE.name)}
           </p>
 
+          <article className="mx-auto mb-8 max-w-3xl rounded-2xl border border-cyan-400/30 bg-cyan-500/10 p-5 text-left">
+            <h2 className="mb-2 text-lg font-semibold text-cyan-300">{t.hero.platformTitle}</h2>
+            <p className="mb-2 text-sm text-gray-200 md:text-base">{t.hero.platformBody}</p>
+            <p className="text-sm text-cyan-200/90 md:text-base">{t.hero.platformNextStep}</p>
+          </article>
+
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#contacto"
