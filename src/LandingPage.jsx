@@ -5,8 +5,10 @@ import { useLanguage } from './context/LanguageContext.jsx'
 
 const NAV_HREFS = [
   { key: 'servicios', href: '#servicios' },
+  { key: 'plataforma', href: '#plataforma' },
   { key: 'proceso', href: '#proceso' },
   { key: 'trabajos', href: '#trabajos' },
+  { key: 'confianza', href: '#confianza' },
   { key: 'contacto', href: '#contacto' },
 ]
 
@@ -43,6 +45,9 @@ export default function LandingPage() {
             {t.hero.body.replace('{name}', SITE.name)}
           </p>
 
+          <p className="mx-auto mb-3 max-w-3xl text-base font-semibold text-cyan-300 md:text-xl">{t.hero.productLine}</p>
+          <p className="mx-auto mb-8 max-w-3xl text-sm text-gray-300 md:text-base">{t.hero.productPillars}</p>
+
           <article className="mx-auto mb-8 max-w-3xl rounded-2xl border border-cyan-400/30 bg-cyan-500/10 p-5 text-left">
             <h2 className="mb-2 text-lg font-semibold text-cyan-300">{t.hero.platformTitle}</h2>
             <p className="mb-2 text-sm text-gray-200 md:text-base">{t.hero.platformBody}</p>
@@ -62,6 +67,23 @@ export default function LandingPage() {
             >
               {t.hero.ctaSecondary}
             </a>
+          </div>
+        </section>
+
+        <section id="plataforma" className="bg-[#0E1018] px-6 py-20" aria-labelledby="plataforma-heading">
+          <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10">
+            <h2 id="plataforma-heading" className="mb-3 text-3xl font-bold">
+              {t.platform.title}
+            </h2>
+            <p className="mb-8 max-w-3xl text-gray-300">{t.platform.subtitle}</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {t.platform.bullets.map((item) => (
+                <article key={item} className="rounded-2xl border border-cyan-300/20 bg-cyan-500/5 p-5">
+                  <p className="font-semibold text-cyan-200">{item}</p>
+                </article>
+              ))}
+            </div>
+            <p className="mt-6 text-sm text-cyan-300/90">{t.platform.footnote}</p>
           </div>
         </section>
 
@@ -87,6 +109,7 @@ export default function LandingPage() {
           <h2 id="proceso-heading" className="mb-12 text-center text-3xl font-bold">
             {t.proceso.title}
           </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-center text-sm text-cyan-300/90 md:text-base">{t.proceso.microcopy}</p>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {t.proceso.steps.map((step, i) => (
               <article key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -109,6 +132,19 @@ export default function LandingPage() {
                 openProjectLabel={t.trabajos.openProject}
                 openAriaLabel={t.trabajos.openAria.replace('{name}', project.name)}
               />
+            ))}
+          </div>
+        </section>
+
+        <section id="confianza" className="px-6 py-20" aria-labelledby="confianza-heading">
+          <h2 id="confianza-heading" className="mb-12 text-center text-3xl font-bold">
+            {t.trust.title}
+          </h2>
+          <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
+            {t.trust.items.map((item) => (
+              <article key={item} className="rounded-2xl border border-white/10 bg-[#14141C] p-6">
+                <p className="text-gray-200">{item}</p>
+              </article>
             ))}
           </div>
         </section>

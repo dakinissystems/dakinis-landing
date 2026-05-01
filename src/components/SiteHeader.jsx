@@ -4,8 +4,10 @@ import { useLanguage } from '../context/LanguageContext.jsx'
 
 const NAV_HREFS = [
   { key: 'servicios', href: '#servicios' },
+  { key: 'plataforma', href: '#plataforma' },
   { key: 'proceso', href: '#proceso' },
   { key: 'trabajos', href: '#trabajos' },
+  { key: 'confianza', href: '#confianza' },
   { key: 'contacto', href: '#contacto' },
 ]
 

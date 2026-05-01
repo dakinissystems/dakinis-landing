@@ -2,6 +2,12 @@ import { publicUrl } from '../lib/publicUrl'
 
 export const SITE = {
   name: 'Dakinis Systems',
+  brand: 'Dakinis Systems',
+  tagline: 'Modular digital platform',
+  contact: {
+    email: 'dakinissystems@gmail.com',
+    whatsapp: 'https://wa.me/5490000000000',
+  },
 }
 
 export const BRAND_ASSETS = {
@@ -31,6 +37,6 @@ export const PROJECTS = [
 ]
 
 export const CONTACT = {
-  email: 'dakinissystems@gmail.com',
-  whatsappHref: 'https://wa.me/5490000000000',
+  email: SITE.contact.email,
+  whatsappHref: SITE.contact.whatsapp,
 }
