@@ -54,6 +54,12 @@ export default function LandingPage() {
           </a>
 
           <nav aria-label="Principal" className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
+            <a href="#no-desde-cero" className="transition hover:text-cyan-300">
+              Ventaja
+            </a>
+            <a href="#dakinis-one" className="transition hover:text-cyan-300">
+              Dakinis One
+            </a>
             <a href="#servicios" className="transition hover:text-cyan-300">
               Servicios
             </a>
@@ -71,15 +77,15 @@ export default function LandingPage() {
       </header>
 
       <main>
-        <section className="px-6 py-20 text-center md:py-24">
-          <h1 className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-            Desarrollo de software
-            <span className="block text-cyan-400">a medida para tu negocio</span>
+        <section className="px-6 py-20 text-center md:py-24" aria-labelledby="hero-heading">
+          <h1 id="hero-heading" className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
+            Desarrollo de software a medida
+            <span className="block text-cyan-400">rápido, escalable y sin empezar desde cero</span>
           </h1>
 
           <p className="mx-auto mb-8 max-w-2xl text-gray-400 md:text-lg">
-            En Dakinis Systems creamos soluciones digitales personalizadas: aplicaciones web, backend,
-            automatizaciones e infraestructura para ayudarte a crecer con tecnologia estable y escalable.
+            En Dakinis Systems desarrollamos soluciones personalizadas apoyadas en una arquitectura propia, lo que permite
+            entregar proyectos más rápido, con menor coste y mayor calidad.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -98,7 +104,63 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="servicios" className="bg-[#111117] px-6 py-20">
+        <section
+          id="no-desde-cero"
+          className="px-6 py-20 text-center"
+          aria-labelledby="no-desde-cero-heading"
+        >
+          <h2 id="no-desde-cero-heading" className="mb-6 text-3xl font-bold">
+            No empezamos desde cero
+          </h2>
+
+          <p className="mx-auto mb-10 max-w-2xl text-gray-400">
+            A diferencia del desarrollo tradicional, utilizamos una base tecnológica propia que ya incluye gestión de
+            usuarios, estructura modular y funcionalidades listas para adaptar a tu negocio.
+          </p>
+
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+            <div className="rounded-2xl bg-[#1A1A22] p-6">
+              <h3 className="font-semibold text-cyan-400">Más rápido</h3>
+              <p className="text-sm text-gray-400">Menos tiempo de desarrollo</p>
+            </div>
+
+            <div className="rounded-2xl bg-[#1A1A22] p-6">
+              <h3 className="font-semibold text-cyan-400">Más económico</h3>
+              <p className="text-sm text-gray-400">Menos horas innecesarias</p>
+            </div>
+
+            <div className="rounded-2xl bg-[#1A1A22] p-6">
+              <h3 className="font-semibold text-cyan-400">Más escalable</h3>
+              <p className="text-sm text-gray-400">Arquitectura preparada para crecer</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="dakinis-one"
+          className="bg-[#111117] px-6 py-20 text-center"
+          aria-labelledby="dakinis-one-heading"
+        >
+          <h2 id="dakinis-one-heading" className="mb-6 text-3xl font-bold">
+            Nuestra base tecnológica
+          </h2>
+
+          <p className="mx-auto mb-10 max-w-2xl text-gray-400">
+            Dakinis One es nuestra plataforma interna que acelera el desarrollo de soluciones a medida. No es un producto
+            genérico, sino una base que adaptamos completamente a cada cliente.
+          </p>
+
+          <a
+            href="https://dakinis-core.onrender.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-xl border border-gray-600 px-6 py-3 transition hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          >
+            Ver ejemplo de plataforma
+          </a>
+        </section>
+
+        <section id="servicios" className="bg-[#0E1018] px-6 py-20">
           <h2 className="mb-12 text-center text-3xl font-bold">Servicios principales</h2>
 
           <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
