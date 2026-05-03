@@ -1,7 +1,12 @@
 import LandingPage from './LandingPage'
+import { LanguageProvider } from './context/LanguageContext.jsx'
 
 function App() {
-  return <LandingPage />
+  return (
+    <LanguageProvider>
+      <LandingPage />
+    </LanguageProvider>
+  )
 }
 
 export default App
