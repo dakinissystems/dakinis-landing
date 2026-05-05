@@ -15,7 +15,7 @@ const PROJECTS = [
   },
   {
     id: 'stream',
-    name: 'Streamer Scheduler',
+    name: 'StreamAutomator',
     url: 'https://streamautomator.com/dashboard',
     logo: logoStreamAutomator,
   },
