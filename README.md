@@ -12,8 +12,9 @@ Landing corporativa para **Dakinis Systems**: empresa de **desarrollo de softwar
 - Servicios principales
 - Proceso de trabajo (descubrimiento, construcción, escalado)
 - Trabajos realizados con enlaces a proyectos:
-  - [AkoeNet](https://akoenet-frontend.onrender.com/)
-  - [Streamer Scheduler / Stream Automator](https://streamautomator.com/dashboard)
+  - [AkoeNet](https://akoenet.dakinissystems.com/)
+  - [StreamAutomator](https://streamautomator.com/)
+  - [Dakinis One (Core)](https://core.dakinissystems.com/) — sección «base tecnológica»
 - Bloque de contacto (email y WhatsApp; actualiza URLs en el código si cambian)
 
 ## Stack

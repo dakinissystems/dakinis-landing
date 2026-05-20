@@ -2,24 +2,15 @@ import logoGrande from '../Logo Grande.jpeg'
 import logoSimple from '../Logo Simple.jpeg'
 import logoAkoenet from '../Akoenet.png'
 import logoStreamAutomator from '../StreamAutomator.png'
+import { DAKINIS_LANDING_PROJECTS, DAKINIS_URL_CORE } from './config/product-urls.js'
 import { useLanguage } from './context/LanguageContext.jsx'
 
 const SERVICE_IDS = ['web', 'backend', 'auto', 'devops']
 
-const PROJECTS = [
-  {
-    id: 'akoenet',
-    name: 'AkoeNet',
-    url: 'https://akoenet-frontend.onrender.com/',
-    logo: logoAkoenet,
-  },
-  {
-    id: 'stream',
-    name: 'StreamAutomator',
-    url: 'https://streamautomator.com/dashboard',
-    logo: logoStreamAutomator,
-  },
-]
+const PROJECT_LOGOS = {
+  akoenet: logoAkoenet,
+  stream: logoStreamAutomator,
+}
 
 export default function LandingPage() {
   const { locale, setLocale, t } = useLanguage()
@@ -174,7 +165,7 @@ export default function LandingPage() {
           <p className="mx-auto mb-10 max-w-2xl text-gray-400">{t.dakinisOne.body}</p>
 
           <a
-            href="https://dakinis-core.onrender.com/"
+            href={DAKINIS_URL_CORE}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-xl border border-gray-600 px-6 py-3 transition hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
@@ -214,9 +205,10 @@ export default function LandingPage() {
         <section id="trabajos" className="bg-[#111117] px-6 py-20">
           <h2 className="mb-12 text-center text-3xl font-bold">{t.trabajos.title}</h2>
           <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
-            {PROJECTS.map((project) => {
+            {DAKINIS_LANDING_PROJECTS.map((project) => {
               const copy = t.trabajos.projects[project.id]
               const openAria = String(t.trabajos.openAria).replace('{name}', project.name)
+              const projectLogo = PROJECT_LOGOS[project.id]
               return (
                 <article
                   key={project.id}
@@ -230,7 +222,7 @@ export default function LandingPage() {
                     aria-label={openAria}
                   >
                     <img
-                      src={project.logo}
+                      src={projectLogo}
                       alt={`Logo ${project.name}`}
                       width={56}
                       height={56}
