@@ -1,3 +1,5 @@
+import { legalEn, legalEs } from './legal-content.js'
+
 /** @typedef {'en' | 'es'} Locale */
 
 /** @type {Record<Locale, Record<string, unknown>>} */
@@ -96,6 +98,7 @@ export const translations = {
     footer: {
       rights: 'Todos los derechos reservados.',
     },
+    legal: legalEs,
   },
 
   en: {
@@ -191,6 +194,7 @@ export const translations = {
     footer: {
       rights: 'All rights reserved.',
     },
+    legal: legalEn,
   },
 }
 

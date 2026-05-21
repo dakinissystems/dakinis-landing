@@ -265,8 +265,22 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="py-8 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Dakinis Systems. {t.footer.rights}
+      <footer className="border-t border-white/10 py-8 text-center text-sm text-gray-500">
+        <p className="mb-3">© {new Date().getFullYear()} Dakinis Systems. {t.footer.rights}</p>
+        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1" aria-label="Legal">
+          <a href="/privacidad" className="hover:text-cyan-400">
+            {t.legal.footer.privacy}
+          </a>
+          <a href="/aviso-legal" className="hover:text-cyan-400">
+            {t.legal.footer.notice}
+          </a>
+          <a href="/cookies" className="hover:text-cyan-400">
+            {t.legal.footer.cookies}
+          </a>
+          <a href="#contacto" className="hover:text-cyan-400">
+            {t.legal.footer.contact}
+          </a>
+        </nav>
       </footer>
     </div>
   )
