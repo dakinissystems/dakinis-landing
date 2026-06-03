@@ -1,3 +1,4 @@
+import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import CorporateShell from "../components/CorporateShell.jsx";
 import { useLanguage } from "../context/LanguageContext.jsx";
@@ -9,7 +10,7 @@ function navigate(path) {
 }
 
 export default function ProductsIndexPage() {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const products = DAKINIS_PRODUCTS.filter((p) => p.role === "flagship" || p.role === "product");
 
   return (
@@ -21,8 +22,8 @@ export default function ProductsIndexPage() {
       <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-20 sm:grid-cols-2">
         {products.map((p) => (
           <article key={p.id} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6 text-left">
-            <h2 className="mb-2 text-xl font-semibold text-cyan-400">{p.name}</h2>
-            <p className="mb-4 text-sm text-gray-400">{p.summary}</p>
+            <h2 className="mb-2 text-xl font-semibold text-cyan-400">{dakinisProductField(p, "name", locale)}</h2>
+            <p className="mb-4 text-sm text-gray-400">{dakinisProductField(p, "summary", locale)}</p>
             <div className="flex flex-wrap gap-3">
               {p.landingPath ? (
                 <button type="button" className="rounded-lg border border-gray-600 px-4 py-2 text-sm hover:bg-gray-800" onClick={() => navigate(p.landingPath)}>

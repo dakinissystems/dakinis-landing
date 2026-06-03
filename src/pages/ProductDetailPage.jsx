@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { dakinisGetProduct } from "@dakinis/shared-brand/products";
 import CorporateShell from "../components/CorporateShell.jsx";
 import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "../config/product-urls.js";
@@ -6,7 +7,7 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
 
 export default function ProductDetailPage({ productId }) {
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
   const product = dakinisGetProduct(productId);
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function ProductDetailPage({ productId }) {
   if (!product) {
     return (
       <CorporateShell>
-        <p className="px-6 py-20 text-center">Producto no encontrado</p>
+        <p className="px-6 py-20 text-center">{t.productos.notFound}</p>
       </CorporateShell>
     );
   }
@@ -32,7 +33,7 @@ export default function ProductDetailPage({ productId }) {
     <CorporateShell activeNav="productos">
       <section className="mx-auto max-w-3xl px-6 py-16 md:py-20">
         <p className="mb-2 text-sm text-cyan-400">{t.productos.kicker}</p>
-        <h1 className="mb-4 text-3xl font-bold">{product.name}</h1>
+        <h1 className="mb-4 text-3xl font-bold">{dakinisProductField(product, "name", locale)}</h1>
         <p className="mb-6 text-gray-300 leading-relaxed">{copy?.body || product.summary}</p>
         {copy?.bullets?.length ? (
           <ul className="mb-8 list-disc space-y-2 pl-5 text-gray-400">

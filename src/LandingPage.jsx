@@ -1,7 +1,9 @@
 import logoAkoenet from "../Akoenet.png";
 import logoStreamAutomator from "../StreamAutomator.png";
 import { DAKINIS_LANDING_PROJECTS } from "./config/landing-projects.js";
+import { dakinisContactWhatsappUrl, dakinisMailtoContact } from "./config/contact.js";
 import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "./config/product-urls.js";
+import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import CorporateShell from "./components/CorporateShell.jsx";
 import { useLanguage } from "./context/LanguageContext.jsx";
@@ -18,12 +20,7 @@ function navigate(path) {
 }
 
 export default function LandingPage() {
-  const { t } = useLanguage();
-
-  const mailtoHref = () => {
-    const subject = encodeURIComponent(String(t.contacto.emailSubject));
-    return `mailto:contacto@dakinis-systems.com?subject=${subject}`;
-  };
+  const { locale, t } = useLanguage();
 
   const saleProducts = DAKINIS_PRODUCTS.filter((p) => p.role === "flagship" || p.role === "product");
 
@@ -66,8 +63,8 @@ export default function LandingPage() {
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
           {saleProducts.map((p) => (
             <article key={p.id} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6 text-center">
-              <h3 className="mb-2 text-lg font-semibold text-cyan-400">{p.name}</h3>
-              <p className="mb-4 text-sm text-gray-400">{p.summary}</p>
+              <h3 className="mb-2 text-lg font-semibold text-cyan-400">{dakinisProductField(p, "name", locale)}</h3>
+              <p className="mb-4 text-sm text-gray-400">{dakinisProductField(p, "summary", locale)}</p>
               <button
                 type="button"
                 className="text-sm text-cyan-300 hover:underline"
@@ -140,11 +137,14 @@ export default function LandingPage() {
         <h2 className="mb-3 text-3xl font-bold text-black">{t.contacto.title}</h2>
         <p className="mx-auto mb-6 max-w-2xl text-sm text-black/85">{t.contacto.body}</p>
         <div className="flex flex-wrap justify-center gap-3">
-          <a href={mailtoHref()} className="rounded-xl bg-black px-8 py-4 font-semibold text-white hover:bg-gray-900">
+          <a
+            href={dakinisMailtoContact(t.contacto.emailSubject)}
+            className="rounded-xl bg-black px-8 py-4 font-semibold text-white hover:bg-gray-900"
+          >
             {t.contacto.email}
           </a>
           <a
-            href="https://wa.me/5490000000000"
+            href={dakinisContactWhatsappUrl(locale)}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl border border-black/50 px-8 py-4 font-semibold text-black hover:bg-black/10"

@@ -3,7 +3,9 @@
 const CONTACT = 'contacto@dakinis-systems.com'
 const PRIVACY = 'privacy@dakinis-systems.com'
 const LEGAL = 'legal@dakinis-systems.com'
-const UPDATED = '19 de mayo de 2026'
+const UPDATED = '3 de junio de 2026'
+const CORE_PRIVACY = 'https://core.dakinissystems.com/privacy'
+const META_BUSINESS_TOOLS_TERMS = 'https://www.facebook.com/legal/terms/businesstools'
 
 export const legalEs = {
   back: '← Volver al inicio',
@@ -66,6 +68,10 @@ export const legalEs = {
         h: '6. Productos',
         p: 'Cada producto (Core, StreamAutomator, AkoeNet) tiene política propia en su dominio.',
       },
+      {
+        h: '7. WhatsApp y Meta (Dakinis One)',
+        p: `Si usas Dakinis One con WhatsApp Business API u otras herramientas empresariales de Meta, aplican las Condiciones de las herramientas empresariales de Meta (${META_BUSINESS_TOOLS_TERMS}) además de la política de Dakinis One (${CORE_PRIVACY}, secciones 10–12). El cliente (tenant) es responsable de avisos, consentimientos y base legal frente a sus usuarios finales.`,
+      },
     ],
   },
   cookies: {
@@ -81,7 +87,7 @@ export const legalEs = {
       },
       {
         h: '3. Contacto externo',
-        p: 'Si usas enlaces mailto: o WhatsApp, aplican las políticas de esos servicios.',
+        p: 'Si usas enlaces mailto: o WhatsApp (wa.me), aplican las políticas de WhatsApp/Meta. No implica por sí solo el uso de WhatsApp Business API en Dakinis One.',
       },
     ],
   },
@@ -89,7 +95,7 @@ export const legalEs = {
 
 export const legalEn = {
   back: '← Back to home',
-  updated: `Last updated: May 19, 2026`,
+  updated: `Last updated: June 3, 2026`,
   footer: {
     privacy: 'Privacy',
     notice: 'Legal notice',
@@ -148,6 +154,10 @@ export const legalEn = {
         h: '6. Products',
         p: 'Each product (Core, StreamAutomator, AkoeNet) has its own policy on its domain.',
       },
+      {
+        h: '7. WhatsApp and Meta (Dakinis One)',
+        p: `If you use Dakinis One with WhatsApp Business API or other Meta Business Tools, Meta’s Business Tools Terms apply (${META_BUSINESS_TOOLS_TERMS}) in addition to the Dakinis One privacy policy (${CORE_PRIVACY}, sections 10–12). The tenant is responsible for notices, consent, and lawful basis for its end-users.`,
+      },
     ],
   },
   cookies: {
@@ -163,7 +173,7 @@ export const legalEn = {
       },
       {
         h: '3. External contact',
-        p: 'If you use mailto: or WhatsApp links, those providers’ policies apply.',
+        p: 'If you use mailto: or WhatsApp (wa.me) links, WhatsApp/Meta policies apply. That alone does not mean WhatsApp Business API is active in Dakinis One.',
       },
     ],
   },

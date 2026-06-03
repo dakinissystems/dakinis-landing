@@ -55,6 +55,7 @@ export const translations = {
     productos: {
       title: 'Productos Dakinis',
       lead: 'Elige la línea que encaja con tu negocio. Todos comparten identidad y soporte Dakinis Systems.',
+      notFound: 'Producto no encontrado',
       kicker: 'Producto',
       more: 'Más información',
       open: 'Abrir producto',
@@ -206,6 +207,7 @@ export const translations = {
     productos: {
       title: 'Dakinis products',
       lead: 'Pick the line that fits your business. Same brand and support across the ecosystem.',
+      notFound: 'Product not found',
       kicker: 'Product',
       more: 'Learn more',
       open: 'Open product',

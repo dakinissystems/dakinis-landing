@@ -1,4 +1,4 @@
-import company from "@dakinis/shared-brand/company";
+import { dakinisCompanyTagline } from "@dakinis/shared-brand/company";
 import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
 import logoGrande from "../../Logo Grande.jpeg";
 import logoSimple from "../../Logo Simple.jpeg";
@@ -43,6 +43,7 @@ function FooterNavLink({ href, children, onNavigate }) {
 
 export default function CorporateShell({ children, activeNav = "" }) {
   const { locale, setLocale, t } = useLanguage();
+  const tagline = dakinisCompanyTagline(locale);
 
   const navClass = (id) =>
     activeNav === id ? "text-cyan-300 font-semibold" : "transition hover:text-cyan-300";
@@ -84,7 +85,7 @@ export default function CorporateShell({ children, activeNav = "" }) {
             {String(t.footer.copyright).replace("{year}", String(new Date().getFullYear()))}{" "}
             {t.footer.rights}
           </p>
-          <p className="max-w-xl text-xs text-gray-600">{company.tagline}</p>
+          <p className="max-w-xl text-xs text-gray-600">{tagline}</p>
           <nav
             className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
             aria-label={String(t.footer.navAria)}
