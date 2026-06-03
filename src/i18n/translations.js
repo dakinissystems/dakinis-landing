@@ -149,7 +149,14 @@ export const translations = {
       emailSubject: 'Proyecto a medida',
     },
     footer: {
+      copyright: '© {year} Dakinis Systems.',
       rights: 'Todos los derechos reservados.',
+      navAria: 'Legal y contacto',
+      links: {
+        privacy: '/privacidad',
+        notice: '/aviso-legal',
+        cookies: '/cookies',
+      },
     },
     legal: legalEs,
   },
@@ -292,7 +299,14 @@ export const translations = {
       emailSubject: 'Custom software project',
     },
     footer: {
+      copyright: '© {year} Dakinis Systems.',
       rights: 'All rights reserved.',
+      navAria: 'Legal and contact',
+      links: {
+        privacy: '/privacy',
+        notice: '/legal',
+        cookies: '/cookies',
+      },
     },
     legal: legalEn,
   },

@@ -1,3 +1,5 @@
+import company from "@dakinis/shared-brand/company";
+import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
 import logoGrande from "../../Logo Grande.jpeg";
 import logoSimple from "../../Logo Simple.jpeg";
 import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "../config/product-urls.js";
@@ -6,6 +8,37 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 function navigate(path) {
   window.history.pushState({}, "", path);
   window.dispatchEvent(new PopStateEvent("popstate"));
+}
+
+function FooterSep() {
+  return (
+    <span className="text-gray-600" aria-hidden>
+      ·
+    </span>
+  );
+}
+
+function FooterNavLink({ href, children, onNavigate }) {
+  const isInternal = href.startsWith("/") && !href.startsWith("//");
+  if (isInternal) {
+    return (
+      <a
+        href={href}
+        className="text-gray-400 transition hover:text-cyan-300"
+        onClick={(e) => {
+          e.preventDefault();
+          onNavigate(href);
+        }}
+      >
+        {children}
+      </a>
+    );
+  }
+  return (
+    <a href={href} className="text-gray-400 transition hover:text-cyan-300">
+      {children}
+    </a>
+  );
 }
 
 export default function CorporateShell({ children, activeNav = "" }) {
@@ -45,8 +78,58 @@ export default function CorporateShell({ children, activeNav = "" }) {
         </div>
       </header>
       <main>{children}</main>
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-gray-500">
-        <p>{t.footer.rights}</p>
+      <footer className="border-t border-white/10 px-6 py-10 text-sm text-gray-500">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 text-center">
+          <p className="font-medium text-gray-400">
+            {String(t.footer.copyright).replace("{year}", String(new Date().getFullYear()))}{" "}
+            {t.footer.rights}
+          </p>
+          <p className="max-w-xl text-xs text-gray-600">{company.tagline}</p>
+          <nav
+            className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
+            aria-label={String(t.footer.navAria)}
+          >
+            <FooterNavLink href={t.footer.links.privacy} onNavigate={navigate}>
+              {t.legal.footer.privacy}
+            </FooterNavLink>
+            <FooterSep />
+            <FooterNavLink href={t.footer.links.notice} onNavigate={navigate}>
+              {t.legal.footer.notice}
+            </FooterNavLink>
+            <FooterSep />
+            <FooterNavLink href={t.footer.links.cookies} onNavigate={navigate}>
+              {t.legal.footer.cookies}
+            </FooterNavLink>
+            <FooterSep />
+            <a
+              href={`mailto:${DAKINIS_CONTACT_EMAIL}`}
+              className="text-gray-400 transition hover:text-cyan-300"
+            >
+              {t.legal.footer.contact}
+            </a>
+            <FooterSep />
+            <a
+              href="/#contacto"
+              className="text-gray-400 transition hover:text-cyan-300"
+              onClick={(e) => {
+                e.preventDefault();
+                const scrollContact = () =>
+                  document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+                const pathNow = window.location.pathname.replace(/\/$/, "") || "/";
+                if (pathNow === "/") {
+                  scrollContact();
+                  return;
+                }
+                window.addEventListener("popstate", () => window.setTimeout(scrollContact, 80), {
+                  once: true
+                });
+                navigate("/");
+              }}
+            >
+              {t.nav.contacto}
+            </a>
+          </nav>
+        </div>
       </footer>
     </div>
   );
