@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@dakinis/shared-brand": path.resolve(__dirname, "../../packages/shared-brand/src")
+      "@dakinis/shared-brand": path.resolve(__dirname, "./packages/shared-brand/src")
     }
   }
 });

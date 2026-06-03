@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@dakinis/shared-brand": "file:../../packages/shared-brand",
+    "@dakinis/shared-brand": "file:./packages/shared-brand",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
