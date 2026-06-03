@@ -16,20 +16,73 @@ export const translations = {
     },
     nav: {
       label: 'Principal',
+      empresa: 'Empresa',
+      productos: 'Productos',
+      servicios: 'Desarrollo a medida',
+      casos: 'Casos de éxito',
+      contacto: 'Contacto',
+      hub: 'Hub',
+      login: 'Login',
       ventaja: 'Ventaja',
       dakinisOne: 'Dakinis One',
-      servicios: 'Servicios',
       proceso: 'Proceso',
       trabajos: 'Trabajos',
-      contacto: 'Contacto',
     },
     hero: {
-      line1: 'Desarrollo de software a medida',
-      line2: 'rápido, escalable y sin empezar desde cero',
+      kicker: 'Dakinis Systems',
+      line1: 'Transformamos negocios',
+      line2: 'mediante software',
       body:
-        'En Dakinis Systems desarrollamos soluciones personalizadas apoyadas en una arquitectura propia, lo que permite entregar proyectos más rápido, con menor coste y mayor calidad.',
+        'Dakinis Systems es la empresa. Dakinis One, StreamAutomator y AkoeNet son productos del mismo ecosistema — más desarrollo a medida cuando lo necesitas.',
+      pillars: [
+        'Dakinis One',
+        'Automatización',
+        'IA',
+        'Desarrollo a medida',
+        'WhatsApp',
+      ],
+      ctaProducts: 'Ver productos',
+      ctaHub: 'Entrar al Hub',
       ctaPrimary: 'Empezar ahora',
       ctaSecondary: 'Ver servicios',
+    },
+    productosHome: {
+      title: 'Productos',
+      lead: 'Tres líneas de producto y un equipo para integrarlas en tu negocio.',
+      oneWhatsapp:
+        'Comunícate con tus clientes por WhatsApp desde Dakinis One — parte del ecosistema, no un extra suelto.',
+    },
+    productos: {
+      title: 'Productos Dakinis',
+      lead: 'Elige la línea que encaja con tu negocio. Todos comparten identidad y soporte Dakinis Systems.',
+      kicker: 'Producto',
+      more: 'Más información',
+      open: 'Abrir producto',
+      enterOne: 'Entrar a Dakinis One',
+      detail: {
+        'dakinis-one': {
+          body:
+            'Gestión empresarial modular: CRM, citas, inventario, restaurante, WhatsApp y analítica. Entra por el Hub y activa los módulos que necesites.',
+          bullets: [
+            'Multi-tenant con datos aislados',
+            'Verticales: clínica, restaurante, inmobiliaria, peluquería',
+            'Hub central para abrir el resto del ecosistema',
+          ],
+        },
+        streamautomator: {
+          body: 'Programación y automatización de contenido para creadores y marcas.',
+          bullets: ['Scheduler Twitch', 'Integraciones', 'Panel web'],
+        },
+        akoenet: {
+          body: 'Comunidades con voz y experiencias en tiempo real.',
+          bullets: ['Auth central Dakinis', 'Sockets', 'Comunidad'],
+        },
+      },
+    },
+    serviciosPage: {
+      title: 'Desarrollo a medida',
+      lead:
+        'Cuando el producto estándar no basta, adaptamos la base Dakinis o construimos integraciones específicas para tu operativa.',
     },
     notFromZero: {
       title: 'No empezamos desde cero',
@@ -43,10 +96,10 @@ export const translations = {
       scaleDesc: 'Arquitectura preparada para crecer',
     },
     dakinisOne: {
-      title: 'Nuestra base tecnológica',
+      title: 'Dakinis One — producto principal',
       body:
-        'Dakinis One es nuestra plataforma interna que acelera el desarrollo de soluciones a medida. No es un producto genérico, sino una base que adaptamos completamente a cada cliente.',
-      cta: 'Ver ejemplo de plataforma',
+        'Plataforma SaaS modular para pymes. No confundir con Dakinis Systems: somos la empresa, Dakinis One es el producto estrella.',
+      cta: 'Abrir Dakinis One',
     },
     services: {
       title: 'Servicios principales',
@@ -113,20 +166,67 @@ export const translations = {
     },
     nav: {
       label: 'Primary',
+      empresa: 'Company',
+      productos: 'Products',
+      servicios: 'Custom development',
+      casos: 'Case studies',
+      contacto: 'Contact',
+      hub: 'Hub',
+      login: 'Log in',
       ventaja: 'Why us',
       dakinisOne: 'Dakinis One',
-      servicios: 'Services',
       proceso: 'Process',
       trabajos: 'Work',
-      contacto: 'Contact',
     },
     hero: {
-      line1: 'Custom software development',
-      line2: 'fast, scalable, and not starting from scratch',
+      kicker: 'Dakinis Systems',
+      line1: 'We transform businesses',
+      line2: 'through software',
       body:
-        'At Dakinis Systems we build tailored solutions on top of our own architecture, so we ship faster, at lower cost, and with higher quality.',
+        'Dakinis Systems is the company. Dakinis One, StreamAutomator and AkoeNet are products in the same ecosystem — plus custom development when you need it.',
+      pillars: ['Dakinis One', 'Automation', 'AI', 'Custom development', 'WhatsApp'],
+      ctaProducts: 'View products',
+      ctaHub: 'Open Hub',
       ctaPrimary: 'Get started',
       ctaSecondary: 'View services',
+    },
+    productosHome: {
+      title: 'Products',
+      lead: 'Three product lines and one team to integrate them into your business.',
+      oneWhatsapp:
+        'Reach customers on WhatsApp from Dakinis One — part of the ecosystem, not a bolt-on.',
+    },
+    productos: {
+      title: 'Dakinis products',
+      lead: 'Pick the line that fits your business. Same brand and support across the ecosystem.',
+      kicker: 'Product',
+      more: 'Learn more',
+      open: 'Open product',
+      enterOne: 'Enter Dakinis One',
+      detail: {
+        'dakinis-one': {
+          body:
+            'Modular business management: CRM, appointments, inventory, restaurant, WhatsApp and analytics. Enter via the Hub.',
+          bullets: [
+            'Multi-tenant isolated data',
+            'Verticals: clinic, restaurant, real estate, salon',
+            'Hub as the single entry point',
+          ],
+        },
+        streamautomator: {
+          body: 'Content scheduling and automation for creators and brands.',
+          bullets: ['Twitch scheduler', 'Integrations', 'Web dashboard'],
+        },
+        akoenet: {
+          body: 'Communities with voice and real-time experiences.',
+          bullets: ['Dakinis central auth', 'Sockets', 'Community'],
+        },
+      },
+    },
+    serviciosPage: {
+      title: 'Custom development',
+      lead:
+        'When off-the-shelf is not enough, we extend the Dakinis stack or build bespoke integrations.',
     },
     notFromZero: {
       title: 'We do not start from zero',
@@ -140,10 +240,10 @@ export const translations = {
       scaleDesc: 'Architecture built to grow',
     },
     dakinisOne: {
-      title: 'Our technology base',
+      title: 'Dakinis One — flagship product',
       body:
-        'Dakinis One is our internal platform that accelerates tailor-made solutions. It is not a generic product, but a foundation we fully adapt for each client.',
-      cta: 'See platform example',
+        'Modular SaaS for SMBs. Dakinis Systems is the company; Dakinis One is the main product line.',
+      cta: 'Open Dakinis One',
     },
     services: {
       title: 'Core services',
