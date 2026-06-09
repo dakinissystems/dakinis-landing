@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext.jsx";
 
 const STORAGE_KEY = "dakinis-landing-whatsapp-fab-position";
 const DEFAULT_POS = { x: 92, y: 92 };
-const DRAG_THRESHOLD_PX = 8;
+const DRAG_THRESHOLD_PX = 5;
 
 function parsePosition(value) {
   if (!value) return { ...DEFAULT_POS };
@@ -67,6 +67,7 @@ export default function DraggableWhatsappButton() {
   }, []);
 
   const handlePointerDown = (e) => {
+    e.preventDefault();
     hasMovedRef.current = false;
     pointerOriginRef.current = { x: e.clientX, y: e.clientY };
     dragStartRef.current = { x: e.clientX, y: e.clientY, posX: pos.x, posY: pos.y };
@@ -74,49 +75,54 @@ export default function DraggableWhatsappButton() {
   };
 
   const handlePointerMove = (e) => {
-    if (!dragStartRef.current || !pointerOriginRef.current) return;
-
-    const origin = pointerOriginRef.current;
-    const moved = Math.hypot(e.clientX - origin.x, e.clientY - origin.y) > DRAG_THRESHOLD_PX;
-    if (!moved) return;
-
-    hasMovedRef.current = true;
-    e.preventDefault();
+    if (dragStartRef.current === null) return;
 
     const w = window.innerWidth;
     const h = window.innerHeight;
+    const cx = e.clientX;
+    const cy = e.clientY;
+    const origin = pointerOriginRef.current;
+
+    if (origin) {
+      const dist = Math.hypot(cx - origin.x, cy - origin.y);
+      if (dist > DRAG_THRESHOLD_PX) hasMovedRef.current = true;
+    }
+
     const start = dragStartRef.current;
-    const dx = ((e.clientX - start.x) / w) * 100;
-    const dy = ((e.clientY - start.y) / h) * 100;
+    const dx = ((cx - start.x) / w) * 100;
+    const dy = ((cy - start.y) / h) * 100;
     const nx = Math.max(0, Math.min(100, start.posX + dx));
     const ny = Math.max(0, Math.min(100, start.posY + dy));
     setPos({ x: nx, y: ny });
-    dragStartRef.current = { x: e.clientX, y: e.clientY, posX: nx, posY: ny };
+    dragStartRef.current = { x: cx, y: cy, posX: nx, posY: ny };
   };
 
   const handlePointerUp = (e) => {
-    const start = dragStartRef.current;
-    const didMove = hasMovedRef.current;
-
     e.currentTarget.releasePointerCapture(e.pointerId);
+    const start = dragStartRef.current;
+    const finalX = start ? start.posX : pos.x;
+    const finalY = start ? start.posY : pos.y;
 
-    if (didMove && start) {
-      setPos({ x: start.posX, y: start.posY });
-      savePosition(start.posX, start.posY);
-    } else if (!didMove) {
+    if (hasMovedRef.current) {
+      setPos({ x: finalX, y: finalY });
+      savePosition(finalX, finalY);
+    } else {
       window.open(href, "_blank", "noopener,noreferrer");
     }
 
     dragStartRef.current = null;
     pointerOriginRef.current = null;
-    hasMovedRef.current = false;
   };
 
   const handlePointerCancel = (e) => {
     e.currentTarget.releasePointerCapture(e.pointerId);
+    if (dragStartRef.current && hasMovedRef.current) {
+      const start = dragStartRef.current;
+      setPos({ x: start.posX, y: start.posY });
+      savePosition(start.posX, start.posY);
+    }
     dragStartRef.current = null;
     pointerOriginRef.current = null;
-    hasMovedRef.current = false;
   };
 
   const handleClick = (e) => {
@@ -128,11 +134,13 @@ export default function DraggableWhatsappButton() {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed z-50 flex min-h-[44px] min-w-[44px] cursor-grab touch-none select-none items-center justify-center rounded-full bg-[#25D366] p-3 text-white shadow-lg transition-shadow hover:scale-110 active:cursor-grabbing sm:p-4"
+      className="fixed z-50 flex min-h-[44px] min-w-[44px] cursor-grab select-none touch-none items-center justify-center rounded-full bg-[#25D366] p-3 text-white shadow-lg transition-shadow duration-300 hover:scale-110 active:cursor-grabbing sm:p-4"
       style={{
         left: `${pos.x}%`,
         top: `${pos.y}%`,
-        transform: "translate(-50%, -50%)"
+        transform: "translate(-50%, -50%)",
+        margin: 0,
+        WebkitUserDrag: "none"
       }}
       aria-label={t.contacto.whatsapp}
       title={t.contacto.whatsapp}
