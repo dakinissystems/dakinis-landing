@@ -1,7 +1,7 @@
 import logoAkoenet from "../Akoenet.png";
 import logoStreamAutomator from "../StreamAutomator.png";
 import { DAKINIS_LANDING_PROJECTS } from "./config/landing-projects.js";
-import { dakinisContactWhatsappUrl, dakinisMailtoContact } from "./config/contact.js";
+import { dakinisMailtoContact } from "./config/contact.js";
 import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "./config/product-urls.js";
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
@@ -143,15 +143,8 @@ export default function LandingPage() {
           >
             {t.contacto.email}
           </a>
-          <a
-            href={dakinisContactWhatsappUrl(locale)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl border border-black/50 px-8 py-4 font-semibold text-black hover:bg-black/10"
-          >
-            {t.contacto.whatsapp}
-          </a>
         </div>
+        <p className="mx-auto mt-4 max-w-md text-sm text-black/75">{t.contacto.whatsappFabHint}</p>
       </section>
     </CorporateShell>
   );

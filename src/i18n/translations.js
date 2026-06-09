@@ -147,6 +147,7 @@ export const translations = {
         'Cuentanos que necesitas y te proponemos una solucion tecnica, tiempos y roadmap de desarrollo.',
       email: 'Escribir por email',
       whatsapp: 'Contactar por WhatsApp',
+      whatsappFabHint: 'También puedes escribirnos por WhatsApp con el botón flotante verde.',
       emailSubject: 'Proyecto a medida',
     },
     footer: {
@@ -298,6 +299,7 @@ export const translations = {
       body: 'Tell us what you need and we will propose a technical approach, timeline, and roadmap.',
       email: 'Email us',
       whatsapp: 'WhatsApp',
+      whatsappFabHint: 'You can also message us on WhatsApp using the green floating button.',
       emailSubject: 'Custom software project',
     },
     footer: {
