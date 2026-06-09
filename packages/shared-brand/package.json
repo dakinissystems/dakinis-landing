@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "description": "Marca, URLs, productos y Hub — consumido por Landing y Core",
+  "scripts": {
+    "sync-brand": "node ../../scripts/sync-shared-brand.mjs"
+  },
   "exports": {
     ".": "./src/index.js",
     "./company": "./src/company.js",
@@ -16,6 +19,7 @@
     "./pricing-links": "./src/pricing-links.js",
     "./analytics": "./src/analytics.js",
     "./sso": "./src/sso.js",
+    "./i18n": "./src/i18n.js",
     "./products.json": "./src/products.json",
     "./hub-modules.json": "./src/hub-modules.json"
   }
