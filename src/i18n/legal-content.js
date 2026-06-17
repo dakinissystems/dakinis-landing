@@ -6,10 +6,10 @@ const NIF = '18513473Z'
 const ADDRESS = 'Málaga, España'
 const COUNTRY_ES = 'España'
 const COUNTRY_EN = 'Spain'
-const CONTACT = 'contacto@dakinis-systems.com'
-const PRIVACY = 'privacy@dakinis-systems.com'
-const LEGAL = 'legal@dakinis-systems.com'
-const SECURITY = 'security@dakinis-systems.com'
+const CONTACT = 'hello@dakinissystems.com'
+const PRIVACY = 'privacy@dakinissystems.com'
+const LEGAL = 'legal@dakinissystems.com'
+const HELP = 'help@dakinissystems.com'
 const AEPD = 'https://www.aepd.es'
 const UPDATED = '19 mayo 2026'
 const CORE_PRIVACY = 'https://core.dakinissystems.com/privacy'
@@ -72,7 +72,7 @@ export const legalEs = {
         h: '9. WhatsApp / Meta (Dakinis One)',
         p: `Herramientas empresariales Meta: ${META_BUSINESS_TOOLS_TERMS}. Dakinis Systems no controla el tratamiento independiente de Meta. Ver ${CORE_PRIVACY}.`,
       },
-      { h: '10. Seguridad', p: `Vulnerabilidades: ${SECURITY} o ${LEGAL}.` },
+      { h: '10. Seguridad', p: `Vulnerabilidades: ${HELP} o ${LEGAL}.` },
     ],
   },
   cookies: {
@@ -128,7 +128,7 @@ export const legalEn = {
         h: '9. WhatsApp / Meta (Dakinis One)',
         p: `Meta Business Tools: ${META_BUSINESS_TOOLS_TERMS}. Dakinis Systems does not control Meta's independent processing. See ${CORE_PRIVACY}.`,
       },
-      { h: '10. Security', p: `Vulnerabilities: ${SECURITY} or ${LEGAL}.` },
+      { h: '10. Security', p: `Vulnerabilities: ${HELP} or ${LEGAL}.` },
     ],
   },
   cookies: {
