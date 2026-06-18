@@ -5,6 +5,7 @@ export const DAKINIS_SUPPORT_EMAIL = company.contacts.support;
 export const DAKINIS_BILLING_EMAIL = company.contacts.billing;
 export const DAKINIS_PRIVACY_EMAIL = company.contacts.privacy;
 export const DAKINIS_LEGAL_EMAIL = company.contacts.legal;
+export const DAKINIS_EMAIL_LOGO_URL = company.assets?.emailLogoUrl ?? "";
 
 /** E.164 sin + (override en build: VITE_CONTACT_WHATSAPP_PHONE). */
 const DAKINIS_WHATSAPP_PHONE_DEFAULT = "34637169174";

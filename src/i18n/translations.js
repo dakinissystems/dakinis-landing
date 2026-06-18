@@ -16,74 +16,20 @@ export const translations = {
     },
     nav: {
       label: 'Principal',
-      empresa: 'Empresa',
-      productos: 'Productos',
-      servicios: 'Desarrollo a medida',
-      casos: 'Casos de éxito',
-      contacto: 'Contacto',
-      hub: 'Hub',
-      login: 'Login',
       ventaja: 'Ventaja',
       dakinisOne: 'Dakinis One',
+      servicios: 'Servicios',
       proceso: 'Proceso',
       trabajos: 'Trabajos',
+      contacto: 'Contacto',
     },
     hero: {
-      kicker: 'Dakinis Systems',
-      line1: 'Transformamos negocios',
-      line2: 'mediante software',
+      line1: 'Desarrollo de software a medida',
+      line2: 'rápido, escalable y sin empezar desde cero',
       body:
-        'Dakinis Systems es la empresa. Dakinis One, StreamAutomator y AkoeNet son productos del mismo ecosistema — más desarrollo a medida cuando lo necesitas.',
-      pillars: [
-        'Dakinis One',
-        'Automatización',
-        'IA',
-        'Desarrollo a medida',
-        'WhatsApp',
-      ],
-      ctaProducts: 'Ver productos',
-      ctaHub: 'Entrar al Hub',
+        'En Dakinis Systems desarrollamos soluciones personalizadas apoyadas en una arquitectura propia, lo que permite entregar proyectos más rápido, con menor coste y mayor calidad.',
       ctaPrimary: 'Empezar ahora',
       ctaSecondary: 'Ver servicios',
-    },
-    productosHome: {
-      title: 'Productos',
-      lead: 'Tres líneas de producto y un equipo para integrarlas en tu negocio.',
-      oneWhatsapp:
-        'Comunícate con tus clientes por WhatsApp desde Dakinis One — parte del ecosistema, no un extra suelto.',
-    },
-    productos: {
-      title: 'Productos Dakinis',
-      lead: 'Elige la línea que encaja con tu negocio. Todos comparten identidad y soporte Dakinis Systems.',
-      notFound: 'Producto no encontrado',
-      kicker: 'Producto',
-      more: 'Más información',
-      open: 'Abrir producto',
-      enterOne: 'Entrar a Dakinis One',
-      detail: {
-        'dakinis-one': {
-          body:
-            'Gestión empresarial modular: CRM, citas, inventario, restaurante, WhatsApp y analítica. Entra por el Hub y activa los módulos que necesites.',
-          bullets: [
-            'Multi-tenant con datos aislados',
-            'Verticales: clínica, restaurante, inmobiliaria, peluquería',
-            'Hub central para abrir el resto del ecosistema',
-          ],
-        },
-        streamautomator: {
-          body: 'Programación y automatización de contenido para creadores y marcas.',
-          bullets: ['Scheduler Twitch', 'Integraciones', 'Panel web'],
-        },
-        akoenet: {
-          body: 'Comunidades con voz y experiencias en tiempo real.',
-          bullets: ['Auth central Dakinis', 'Sockets', 'Comunidad'],
-        },
-      },
-    },
-    serviciosPage: {
-      title: 'Desarrollo a medida',
-      lead:
-        'Cuando el producto estándar no basta, adaptamos la base Dakinis o construimos integraciones específicas para tu operativa.',
     },
     notFromZero: {
       title: 'No empezamos desde cero',
@@ -97,10 +43,10 @@ export const translations = {
       scaleDesc: 'Arquitectura preparada para crecer',
     },
     dakinisOne: {
-      title: 'Dakinis One — producto principal',
+      title: 'Nuestra base tecnológica',
       body:
-        'Plataforma SaaS modular para pymes. No confundir con Dakinis Systems: somos la empresa, Dakinis One es el producto estrella.',
-      cta: 'Abrir Dakinis One',
+        'Dakinis One es nuestra plataforma interna que acelera el desarrollo de soluciones a medida. No es un producto genérico, sino una base que adaptamos completamente a cada cliente.',
+      cta: 'Ver ejemplo de plataforma',
     },
     services: {
       title: 'Servicios principales',
@@ -147,18 +93,10 @@ export const translations = {
         'Cuentanos que necesitas y te proponemos una solucion tecnica, tiempos y roadmap de desarrollo.',
       email: 'Escribir por email',
       whatsapp: 'Contactar por WhatsApp',
-      whatsappFabHint: 'También puedes escribirnos por WhatsApp con el botón flotante verde.',
       emailSubject: 'Proyecto a medida',
     },
     footer: {
-      copyright: '© {year} Dakinis Systems.',
       rights: 'Todos los derechos reservados.',
-      navAria: 'Legal y contacto',
-      links: {
-        privacy: '/privacidad',
-        notice: '/aviso-legal',
-        cookies: '/cookies',
-      },
     },
     legal: legalEs,
   },
@@ -175,68 +113,20 @@ export const translations = {
     },
     nav: {
       label: 'Primary',
-      empresa: 'Company',
-      productos: 'Products',
-      servicios: 'Custom development',
-      casos: 'Case studies',
-      contacto: 'Contact',
-      hub: 'Hub',
-      login: 'Log in',
       ventaja: 'Why us',
       dakinisOne: 'Dakinis One',
+      servicios: 'Services',
       proceso: 'Process',
       trabajos: 'Work',
+      contacto: 'Contact',
     },
     hero: {
-      kicker: 'Dakinis Systems',
-      line1: 'We transform businesses',
-      line2: 'through software',
+      line1: 'Custom software development',
+      line2: 'fast, scalable, and not starting from scratch',
       body:
-        'Dakinis Systems is the company. Dakinis One, StreamAutomator and AkoeNet are products in the same ecosystem — plus custom development when you need it.',
-      pillars: ['Dakinis One', 'Automation', 'AI', 'Custom development', 'WhatsApp'],
-      ctaProducts: 'View products',
-      ctaHub: 'Open Hub',
+        'At Dakinis Systems we build tailored solutions on top of our own architecture, so we ship faster, at lower cost, and with higher quality.',
       ctaPrimary: 'Get started',
       ctaSecondary: 'View services',
-    },
-    productosHome: {
-      title: 'Products',
-      lead: 'Three product lines and one team to integrate them into your business.',
-      oneWhatsapp:
-        'Reach customers on WhatsApp from Dakinis One — part of the ecosystem, not a bolt-on.',
-    },
-    productos: {
-      title: 'Dakinis products',
-      lead: 'Pick the line that fits your business. Same brand and support across the ecosystem.',
-      notFound: 'Product not found',
-      kicker: 'Product',
-      more: 'Learn more',
-      open: 'Open product',
-      enterOne: 'Enter Dakinis One',
-      detail: {
-        'dakinis-one': {
-          body:
-            'Modular business management: CRM, appointments, inventory, restaurant, WhatsApp and analytics. Enter via the Hub.',
-          bullets: [
-            'Multi-tenant isolated data',
-            'Verticals: clinic, restaurant, real estate, salon',
-            'Hub as the single entry point',
-          ],
-        },
-        streamautomator: {
-          body: 'Content scheduling and automation for creators and brands.',
-          bullets: ['Twitch scheduler', 'Integrations', 'Web dashboard'],
-        },
-        akoenet: {
-          body: 'Communities with voice and real-time experiences.',
-          bullets: ['Dakinis central auth', 'Sockets', 'Community'],
-        },
-      },
-    },
-    serviciosPage: {
-      title: 'Custom development',
-      lead:
-        'When off-the-shelf is not enough, we extend the Dakinis stack or build bespoke integrations.',
     },
     notFromZero: {
       title: 'We do not start from zero',
@@ -250,10 +140,10 @@ export const translations = {
       scaleDesc: 'Architecture built to grow',
     },
     dakinisOne: {
-      title: 'Dakinis One — flagship product',
+      title: 'Our technology base',
       body:
-        'Modular SaaS for SMBs. Dakinis Systems is the company; Dakinis One is the main product line.',
-      cta: 'Open Dakinis One',
+        'Dakinis One is our internal platform that accelerates tailor-made solutions. It is not a generic product, but a foundation we fully adapt for each client.',
+      cta: 'See platform example',
     },
     services: {
       title: 'Core services',
@@ -299,18 +189,10 @@ export const translations = {
       body: 'Tell us what you need and we will propose a technical approach, timeline, and roadmap.',
       email: 'Email us',
       whatsapp: 'WhatsApp',
-      whatsappFabHint: 'You can also message us on WhatsApp using the green floating button.',
       emailSubject: 'Custom software project',
     },
     footer: {
-      copyright: '© {year} Dakinis Systems.',
       rights: 'All rights reserved.',
-      navAria: 'Legal and contact',
-      links: {
-        privacy: '/privacy',
-        notice: '/legal',
-        cookies: '/cookies',
-      },
     },
     legal: legalEn,
   },
