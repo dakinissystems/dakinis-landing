@@ -31,10 +31,6 @@ const company = {
     streamautomator: "https://streamautomator.com/",
     akoenet: "https://akoenet.dakinissystems.com/"
   },
-  assets: {
-    emailLogoUrl: "https://dakinissystems.com/images/logo-email.png",
-    emailLogoWidth: 120
-  },
   lastUpdated: "2026-05-19"
 };
 
