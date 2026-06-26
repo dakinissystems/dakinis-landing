@@ -100,6 +100,10 @@ export default function CorporateShell({ children, activeNav = "" }) {
               {t.legal.footer.notice}
             </FooterNavLink>
             <FooterSep />
+            <FooterNavLink href={t.footer.links.terms} onNavigate={navigate}>
+              {t.legal.footer.terms}
+            </FooterNavLink>
+            <FooterSep />
             <FooterNavLink href={t.footer.links.cookies} onNavigate={navigate}>
               {t.legal.footer.cookies}
             </FooterNavLink>

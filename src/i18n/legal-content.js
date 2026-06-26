@@ -39,6 +39,7 @@ export const legalEs = {
     privacy: 'Privacidad',
     notice: 'Aviso legal',
     cookies: 'Cookies',
+    terms: 'Términos',
     contact: 'Contacto',
   },
   notice: {
@@ -86,6 +87,21 @@ export const legalEs = {
       { h: '3. Contacto externo', p: 'Enlaces mailto: o WhatsApp: políticas de tu proveedor o Meta.' },
     ],
   },
+  terms: {
+    title: 'Términos de uso',
+    sections: [
+      { h: '1. Uso del sitio', p: 'Al usar dakinissystems.com aceptas estos términos.' },
+      { h: '2. Naturaleza', p: 'Sitio informativo. Los proyectos se formalizan por escrito.' },
+      { h: '3. Propiedad intelectual', p: 'Contenidos protegidos. No copies sin permiso.' },
+      { h: '4. Enlaces externos', p: 'No somos responsables del contenido de sitios de terceros.' },
+      { h: '5. Limitación de responsabilidad', p: 'El sitio se ofrece «tal cual».' },
+      {
+        h: '6. Productos',
+        p: 'Cada producto (Dakinis One, StreamAutomator, AkoeNet) tiene condiciones propias en su dominio.',
+      },
+      { h: '7. Contacto', p: `${LEGAL}` },
+    ],
+  },
 }
 
 export const legalEn = {
@@ -95,6 +111,7 @@ export const legalEn = {
     privacy: 'Privacy',
     notice: 'Legal notice',
     cookies: 'Cookies',
+    terms: 'Terms',
     contact: 'Contact',
   },
   notice: {
@@ -140,6 +157,21 @@ export const legalEn = {
       },
       { h: '2. Essential', p: 'Language preference in local storage.' },
       { h: '3. External contact', p: 'mailto: or WhatsApp links: your provider or Meta policies apply.' },
+    ],
+  },
+  terms: {
+    title: 'Terms of use',
+    sections: [
+      { h: '1. Use of the site', p: 'By using dakinissystems.com you accept these terms.' },
+      { h: '2. Nature', p: 'Informational site. Projects are formalized in writing.' },
+      { h: '3. Intellectual property', p: 'Protected content. Do not copy without permission.' },
+      { h: '4. External links', p: 'We are not responsible for third-party site content.' },
+      { h: '5. Limitation of liability', p: 'The site is provided «as is».' },
+      {
+        h: '6. Products',
+        p: 'Each product (Dakinis One, StreamAutomator, AkoeNet) has its own terms on its domain.',
+      },
+      { h: '7. Contact', p: `${LEGAL}` },
     ],
   },
 }

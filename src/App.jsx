@@ -12,7 +12,9 @@ const LEGAL_ROUTES = {
   "/privacy": "privacy",
   "/aviso-legal": "notice",
   "/legal": "notice",
-  "/cookies": "cookies"
+  "/cookies": "cookies",
+  "/terminos": "terms",
+  "/terms": "terms"
 };
 
 const PRODUCT_ROUTES = {
