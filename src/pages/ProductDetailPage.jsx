@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { dakinisGetProduct } from "@dakinis/shared-brand/products";
+import { CORE_LOGIN_URL, CORE_TRIAL_URL } from "../config/core-links.js";
 import CorporateShell from "../components/CorporateShell.jsx";
-import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "../config/product-urls.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
 
@@ -11,9 +11,6 @@ export default function ProductDetailPage({ productId }) {
   const product = dakinisGetProduct(productId);
 
   useEffect(() => {
-    if (productId === "dakinis-one") {
-      dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.CTA_DAKINIS_ONE_CLICKED, { page: "product_detail" });
-    }
     dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.LANDING_PRODUCT_VIEW, { productId });
   }, [productId]);
 
@@ -27,7 +24,7 @@ export default function ProductDetailPage({ productId }) {
     );
   }
 
-  const ctaUrl = product.external ? product.url : DAKINIS_URL_HUB;
+  const ctaUrl = product.external && product.url ? product.url : CORE_TRIAL_URL;
 
   return (
     <CorporateShell activeNav="productos">
@@ -47,12 +44,17 @@ export default function ProductDetailPage({ productId }) {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black hover:bg-cyan-400"
+          onClick={() => {
+            if (product.id === "dakinis-one") {
+              dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.CTA_DAKINIS_ONE_CLICKED, { page: "product_detail" });
+            }
+          }}
         >
           {product.id === "dakinis-one" ? t.productos.enterOne : t.productos.open}
         </a>
         {product.id === "dakinis-one" ? (
           <p className="mt-4 text-sm text-gray-500">
-            <a href={`${DAKINIS_URL_CORE.replace(/\/$/, "")}/login`} className="text-cyan-400 hover:underline">
+            <a href={CORE_LOGIN_URL} className="text-cyan-400 hover:underline">
               {t.nav.login}
             </a>
           </p>

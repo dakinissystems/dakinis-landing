@@ -2,9 +2,10 @@ import { dakinisCompanyTagline } from "@dakinis/shared-brand/company";
 import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
 import logoGrande from "../../Logo Grande.jpeg";
 import logoSimple from "../../Logo Simple.jpeg";
-import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "../config/product-urls.js";
+import { CORE_LOGIN_URL, CORE_TRIAL_URL } from "../config/core-links.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
 import DraggableWhatsappButton from "./DraggableWhatsappButton.jsx";
+import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
 
 function navigate(path) {
   window.history.pushState({}, "", path);
@@ -66,11 +67,22 @@ export default function CorporateShell({ children, activeNav = "" }) {
               <a href="/#casos" className={navClass("casos")}>{t.nav.casos}</a>
               <a href="/#contacto" className={navClass("contacto")}>{t.nav.contacto}</a>
             </nav>
-            <a href={DAKINIS_URL_HUB} className="hidden rounded-lg border border-cyan-500/40 px-3 py-1.5 text-sm font-semibold text-cyan-200 hover:bg-cyan-500/10 md:inline-block">
-              {t.nav.hub}
-            </a>
-            <a href={`${DAKINIS_URL_CORE.replace(/\/$/, "")}/login`} className="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-semibold text-black hover:bg-cyan-400">
+            <a
+              href={CORE_LOGIN_URL}
+              className="hidden text-sm text-gray-400 transition hover:text-cyan-300 md:inline-block"
+            >
               {t.nav.login}
+            </a>
+            <a
+              href={CORE_TRIAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-semibold text-black hover:bg-cyan-400"
+              onClick={() =>
+                dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.CTA_DAKINIS_ONE_CLICKED, { from: "header_try" })
+              }
+            >
+              {t.nav.tryOne}
             </a>
             <div className="flex shrink-0 items-center rounded-lg border border-white/15 bg-white/5 p-0.5" role="group" aria-label={String(t.lang.switchLabel)}>
               <button type="button" className={`rounded-md px-2 py-1 text-xs font-semibold ${locale === "es" ? "bg-cyan-500/25 text-cyan-200" : "text-gray-400"}`} onClick={() => setLocale("es")}>{t.lang.es}</button>

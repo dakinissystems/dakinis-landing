@@ -2,7 +2,8 @@ import logoAkoenet from "../Akoenet.png";
 import logoStreamAutomator from "../StreamAutomator.png";
 import { DAKINIS_LANDING_PROJECTS } from "./config/landing-projects.js";
 import { dakinisMailtoContact } from "./config/contact.js";
-import { DAKINIS_URL_CORE, DAKINIS_URL_HUB } from "./config/product-urls.js";
+import { CORE_PRICING_URL, CORE_TRIAL_URL } from "./config/core-links.js";
+import { DAKINIS_URL_HUB } from "./config/product-urls.js";
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import CorporateShell from "./components/CorporateShell.jsx";
@@ -19,10 +20,17 @@ function navigate(path) {
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
+function trackOneCta(from) {
+  dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.CTA_DAKINIS_ONE_CLICKED, { from });
+}
+
+/** Secondary products on home — not the flagship conversion focus. */
+const ECOSYSTEM_PRODUCTS = DAKINIS_PRODUCTS.filter(
+  (p) => p.role === "product" && p.status === "active" && p.id !== "dnd"
+);
+
 export default function LandingPage() {
   const { locale, t } = useLanguage();
-
-  const saleProducts = DAKINIS_PRODUCTS.filter((p) => p.role === "flagship" || p.role === "product");
 
   return (
     <CorporateShell activeNav="home">
@@ -32,53 +40,112 @@ export default function LandingPage() {
           {t.hero.line1}
           <span className="block text-cyan-400">{t.hero.line2}</span>
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-gray-400 md:text-lg">{t.hero.body}</p>
-        <ul className="mx-auto mb-8 flex max-w-xl flex-wrap justify-center gap-2 text-sm text-gray-300">
+        <p className="mx-auto mb-4 max-w-2xl text-gray-300 md:text-lg">{t.hero.body}</p>
+        {t.hero.modules ? (
+          <p className="mx-auto mb-8 max-w-xl text-sm text-gray-500">{t.hero.modules}</p>
+        ) : null}
+        <ul className="mx-auto mb-10 flex max-w-2xl flex-wrap justify-center gap-2 text-sm text-gray-300">
           {(t.hero.pillars || []).map((item) => (
             <li key={item} className="rounded-full border border-white/15 px-3 py-1">
               ✓ {item}
             </li>
           ))}
         </ul>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col items-center gap-4">
           <a
-            href="#productos-home"
-            className="rounded-xl bg-cyan-500 px-6 py-3 font-semibold text-black transition hover:bg-cyan-400"
+            href={CORE_TRIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-2xl bg-cyan-500 px-10 py-4 text-lg font-bold text-black shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400 md:text-xl"
+            onClick={() => trackOneCta("landing_hero_primary")}
           >
-            {t.hero.ctaProducts}
+            {t.hero.ctaPrimary}
           </a>
-          <a
-            href={DAKINIS_URL_HUB}
-            className="rounded-xl border border-gray-600 px-6 py-3 transition hover:bg-gray-800"
-            onClick={() => dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.HUB_OPENED, { from: "landing_hero" })}
-          >
-            {t.hero.ctaHub}
-          </a>
+          <div className="flex flex-wrap justify-center gap-3 text-sm">
+            <a
+              href={CORE_PRICING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
+              onClick={() => trackOneCta("landing_hero_pricing")}
+            >
+              {t.hero.ctaPricing}
+            </a>
+            <a
+              href="#ecosistema"
+              className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
+            >
+              {t.hero.ctaProducts}
+            </a>
+          </div>
+          {t.hero.trustLine ? (
+            <p className="mt-2 max-w-md text-xs text-gray-500">{t.hero.trustLine}</p>
+          ) : null}
         </div>
       </section>
 
-      <section id="productos-home" className="bg-[#111117] px-6 py-20">
-        <h2 className="mb-4 text-center text-3xl font-bold">{t.productosHome.title}</h2>
-        <p className="mx-auto mb-10 max-w-2xl text-center text-gray-400">{t.productosHome.lead}</p>
+      <section id="por-que-one" className="bg-[#111117] px-6 py-20" aria-labelledby="why-one-heading">
+        <h2 id="why-one-heading" className="mb-4 text-center text-3xl font-bold">
+          {t.whyOne.title}
+        </h2>
+        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-400">{t.whyOne.lead}</p>
+        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {(t.whyOne.benefits || []).map((item) => (
+            <article key={item.title} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6 text-left">
+              <h3 className="mb-2 font-semibold text-cyan-400">{item.title}</h3>
+              <p className="text-sm text-gray-400">{item.desc}</p>
+            </article>
+          ))}
+        </div>
+        <p className="mt-10 text-center">
+          <a
+            href={CORE_TRIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-xl bg-cyan-500 px-8 py-3 font-semibold text-black hover:bg-cyan-400"
+            onClick={() => trackOneCta("landing_why_one")}
+          >
+            {t.whyOne.cta}
+          </a>
+        </p>
+      </section>
+
+      <section id="ecosistema" className="px-6 py-20">
+        <h2 className="mb-4 text-center text-3xl font-bold">{t.ecosystem.title}</h2>
+        <p className="mx-auto mb-10 max-w-2xl text-center text-gray-400">{t.ecosystem.lead}</p>
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
-          {saleProducts.map((p) => (
+          {ECOSYSTEM_PRODUCTS.map((p) => (
             <article key={p.id} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6 text-center">
-              <h3 className="mb-2 text-lg font-semibold text-cyan-400">{dakinisProductField(p, "name", locale)}</h3>
+              <h3 className="mb-2 text-lg font-semibold text-gray-100">{dakinisProductField(p, "name", locale)}</h3>
               <p className="mb-4 text-sm text-gray-400">{dakinisProductField(p, "summary", locale)}</p>
-              <button
-                type="button"
-                className="text-sm text-cyan-300 hover:underline"
-                onClick={() => navigate(p.landingPath || "/productos")}
-              >
-                {t.productos.more}
-              </button>
+              <div className="flex flex-wrap justify-center gap-3 text-sm">
+                {p.landingPath ? (
+                  <button
+                    type="button"
+                    className="text-cyan-300 hover:underline"
+                    onClick={() => navigate(p.landingPath)}
+                  >
+                    {t.productos.more}
+                  </button>
+                ) : null}
+                {p.url ? (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-cyan-300"
+                  >
+                    {t.productos.open}
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>
         <p className="mt-8 text-center text-sm text-gray-500">{t.productosHome.oneWhatsapp}</p>
       </section>
 
-      <section id="no-desde-cero" className="px-6 py-20 text-center" aria-labelledby="no-desde-cero-heading">
+      <section id="no-desde-cero" className="bg-[#0E1018] px-6 py-20 text-center" aria-labelledby="no-desde-cero-heading">
         <h2 id="no-desde-cero-heading" className="mb-6 text-3xl font-bold">
           {t.notFromZero.title}
         </h2>
@@ -97,19 +164,15 @@ export default function LandingPage() {
             <p className="text-sm text-gray-400">{t.notFromZero.scaleDesc}</p>
           </div>
         </div>
-      </section>
-
-      <section id="dakinis-one" className="bg-[#0E1018] px-6 py-16 text-center">
-        <h2 className="mb-4 text-2xl font-bold">{t.dakinisOne.title}</h2>
-        <p className="mx-auto mb-6 max-w-2xl text-gray-400">{t.dakinisOne.body}</p>
-        <a
-          href={DAKINIS_URL_CORE}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block rounded-xl border border-gray-600 px-6 py-3 transition hover:bg-gray-800"
-        >
-          {t.dakinisOne.cta}
-        </a>
+        <p className="mt-8">
+          <button
+            type="button"
+            className="text-sm text-cyan-400 hover:underline"
+            onClick={() => navigate("/servicios")}
+          >
+            {t.hero.ctaSecondary} →
+          </button>
+        </p>
       </section>
 
       <section id="casos" className="bg-[#111117] px-6 py-20">
@@ -138,8 +201,17 @@ export default function LandingPage() {
         <p className="mx-auto mb-6 max-w-2xl text-sm text-black/85">{t.contacto.body}</p>
         <div className="flex flex-wrap justify-center gap-3">
           <a
-            href={dakinisMailtoContact(t.contacto.emailSubject)}
+            href={CORE_TRIAL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-xl bg-black px-8 py-4 font-semibold text-white hover:bg-gray-900"
+            onClick={() => trackOneCta("landing_contact_one")}
+          >
+            {t.hero.ctaPrimary}
+          </a>
+          <a
+            href={dakinisMailtoContact(t.contacto.emailSubject)}
+            className="rounded-xl border-2 border-black/30 bg-white/90 px-8 py-4 font-semibold text-black hover:bg-white"
           >
             {t.contacto.email}
           </a>

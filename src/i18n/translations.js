@@ -23,34 +23,49 @@ export const translations = {
       contacto: 'Contacto',
       hub: 'Hub',
       login: 'Login',
+      tryOne: 'Probar gratis',
       ventaja: 'Ventaja',
       dakinisOne: 'Dakinis One',
       proceso: 'Proceso',
       trabajos: 'Trabajos',
     },
     hero: {
-      kicker: 'Dakinis Systems',
-      line1: 'Transformamos negocios',
-      line2: 'mediante software',
+      kicker: 'Dakinis One',
+      line1: 'Gestiona todo tu negocio',
+      line2: 'desde una sola plataforma',
       body:
-        'Dakinis Systems es la empresa. Dakinis One, StreamAutomator y AkoeNet son productos del mismo ecosistema — más desarrollo a medida cuando lo necesitas.',
-      pillars: [
-        'Dakinis One',
-        'Automatización',
-        'IA',
-        'Desarrollo a medida',
-        'WhatsApp',
-      ],
-      ctaProducts: 'Ver productos',
+        'CRM, inventario, ventas, WhatsApp, reservas e IA. Olvídate de Excel, papeles y aplicaciones sueltas.',
+      modules: 'Todo lo que un comercio o restaurante necesita, en un solo sitio.',
+      pillars: ['Clientes', 'Inventario', 'Ventas', 'WhatsApp', 'Reservas', 'IA'],
+      ctaPrimary: 'Probar Dakinis One gratis',
+      ctaPricing: 'Ver planes',
+      ctaProducts: 'Ver más productos',
       ctaHub: 'Entrar al Hub',
-      ctaPrimary: 'Empezar ahora',
       ctaSecondary: 'Ver servicios',
+      trustLine: 'Un producto de Dakinis Systems — software para pymes en España.',
+    },
+    whyOne: {
+      title: '¿Por qué Dakinis One?',
+      lead: 'Responde de inmediato a lo que buscas cuando haces clic en un anuncio: qué ganas y cómo te ayuda en el día a día.',
+      benefits: [
+        { title: 'Clientes y ventas', desc: 'CRM, pipeline y seguimiento sin hojas de cálculo.' },
+        { title: 'Inventario', desc: 'Stock, alertas y movimientos en tiempo real.' },
+        { title: 'WhatsApp', desc: 'Habla con tus clientes desde la misma herramienta.' },
+        { title: 'Reservas y citas', desc: 'Agenda para restaurantes, clínicas o servicios.' },
+        { title: 'Reportes', desc: 'Métricas claras para decidir con datos, no intuición.' },
+        { title: 'IA integrada', desc: 'Copiloto para tareas repetitivas y respuestas rápidas.' },
+      ],
+      cta: 'Empezar con Dakinis One',
+    },
+    ecosystem: {
+      title: 'Más del ecosistema Dakinis',
+      lead: 'Cuando quieras ir más allá del negocio del día a día, estos productos comparten la misma base y soporte.',
     },
     productosHome: {
-      title: 'Productos',
-      lead: 'Tres líneas de producto y un equipo para integrarlas en tu negocio.',
+      title: 'Otros productos',
+      lead: 'StreamAutomator, AkoeNet y Finanzas para creadores, comunidades y finanzas personales.',
       oneWhatsapp:
-        'Comunícate con tus clientes por WhatsApp desde Dakinis One — parte del ecosistema, no un extra suelto.',
+        'WhatsApp en Dakinis One no es un extra suelto: forma parte de la gestión diaria de tu negocio.',
     },
     productos: {
       title: 'Productos Dakinis',
@@ -59,15 +74,15 @@ export const translations = {
       kicker: 'Producto',
       more: 'Más información',
       open: 'Abrir producto',
-      enterOne: 'Entrar a Dakinis One',
+      enterOne: 'Probar Dakinis One gratis',
       detail: {
         'dakinis-one': {
           body:
-            'Gestión empresarial modular: CRM, citas, inventario, restaurante, WhatsApp y analítica. Entra por el Hub y activa los módulos que necesites.',
+            'Deja de gestionar tu negocio con Excel. Ventas, clientes, inventario, WhatsApp, reservas e IA en una plataforma modular pensada para pymes.',
           bullets: [
-            'Multi-tenant con datos aislados',
-            'Verticales: clínica, restaurante, inmobiliaria, peluquería',
-            'Hub central para abrir el resto del ecosistema',
+            'CRM, inventario y restaurante en un solo panel',
+            'WhatsApp y migración de datos incluidos en el flujo',
+            'Calculadora de ahorro y planes claros antes de registrarte',
           ],
         },
         streamautomator: {
@@ -97,10 +112,10 @@ export const translations = {
       scaleDesc: 'Arquitectura preparada para crecer',
     },
     dakinisOne: {
-      title: 'Dakinis One — producto principal',
+      title: 'Dakinis One',
       body:
-        'Plataforma SaaS modular para pymes. No confundir con Dakinis Systems: somos la empresa, Dakinis One es el producto estrella.',
-      cta: 'Abrir Dakinis One',
+        'La plataforma principal para gestionar tu negocio. Dakinis Systems es la empresa; Dakinis One es el producto que usan comercios y restaurantes cada día.',
+      cta: 'Probar Dakinis One gratis',
     },
     services: {
       title: 'Servicios principales',
@@ -183,28 +198,49 @@ export const translations = {
       contacto: 'Contact',
       hub: 'Hub',
       login: 'Log in',
+      tryOne: 'Try free',
       ventaja: 'Why us',
       dakinisOne: 'Dakinis One',
       proceso: 'Process',
       trabajos: 'Work',
     },
     hero: {
-      kicker: 'Dakinis Systems',
-      line1: 'We transform businesses',
-      line2: 'through software',
+      kicker: 'Dakinis One',
+      line1: 'Run your whole business',
+      line2: 'from one platform',
       body:
-        'Dakinis Systems is the company. Dakinis One, StreamAutomator and AkoeNet are products in the same ecosystem — plus custom development when you need it.',
-      pillars: ['Dakinis One', 'Automation', 'AI', 'Custom development', 'WhatsApp'],
-      ctaProducts: 'View products',
+        'CRM, inventory, sales, WhatsApp, bookings and AI. Ditch Excel, paper and scattered apps.',
+      modules: 'Everything a shop or restaurant needs — in one place.',
+      pillars: ['Customers', 'Inventory', 'Sales', 'WhatsApp', 'Bookings', 'AI'],
+      ctaPrimary: 'Try Dakinis One free',
+      ctaPricing: 'View plans',
+      ctaProducts: 'More products',
       ctaHub: 'Open Hub',
-      ctaPrimary: 'Get started',
       ctaSecondary: 'View services',
+      trustLine: 'A Dakinis Systems product — business software built in Spain.',
+    },
+    whyOne: {
+      title: 'Why Dakinis One?',
+      lead: 'Answers the question you have when you click an ad: what you get and how it helps day to day.',
+      benefits: [
+        { title: 'Customers & sales', desc: 'CRM, pipeline and follow-up without spreadsheets.' },
+        { title: 'Inventory', desc: 'Stock, alerts and movements in real time.' },
+        { title: 'WhatsApp', desc: 'Talk to customers from the same tool.' },
+        { title: 'Bookings', desc: 'Scheduling for restaurants, clinics or services.' },
+        { title: 'Reports', desc: 'Clear metrics to decide with data, not guesswork.' },
+        { title: 'Built-in AI', desc: 'Copilot for repetitive tasks and quick answers.' },
+      ],
+      cta: 'Get started with Dakinis One',
+    },
+    ecosystem: {
+      title: 'More from the Dakinis ecosystem',
+      lead: 'When you need more than day-to-day operations, these products share the same foundation and support.',
     },
     productosHome: {
-      title: 'Products',
-      lead: 'Three product lines and one team to integrate them into your business.',
+      title: 'Other products',
+      lead: 'StreamAutomator, AkoeNet and Finances for creators, communities and personal finance.',
       oneWhatsapp:
-        'Reach customers on WhatsApp from Dakinis One — part of the ecosystem, not a bolt-on.',
+        'WhatsApp in Dakinis One is not a bolt-on — it is part of daily business management.',
     },
     productos: {
       title: 'Dakinis products',
@@ -213,15 +249,15 @@ export const translations = {
       kicker: 'Product',
       more: 'Learn more',
       open: 'Open product',
-      enterOne: 'Enter Dakinis One',
+      enterOne: 'Try Dakinis One free',
       detail: {
         'dakinis-one': {
           body:
-            'Modular business management: CRM, appointments, inventory, restaurant, WhatsApp and analytics. Enter via the Hub.',
+            'Stop running your business on Excel. Sales, customers, inventory, WhatsApp, bookings and AI in one modular platform built for SMBs.',
           bullets: [
-            'Multi-tenant isolated data',
-            'Verticals: clinic, restaurant, real estate, salon',
-            'Hub as the single entry point',
+            'CRM, inventory and restaurant in one dashboard',
+            'WhatsApp and data migration built into the flow',
+            'Savings calculator and clear plans before you sign up',
           ],
         },
         streamautomator: {
@@ -251,10 +287,10 @@ export const translations = {
       scaleDesc: 'Architecture built to grow',
     },
     dakinisOne: {
-      title: 'Dakinis One — flagship product',
+      title: 'Dakinis One',
       body:
-        'Modular SaaS for SMBs. Dakinis Systems is the company; Dakinis One is the main product line.',
-      cta: 'Open Dakinis One',
+        'The main platform to run your business. Dakinis Systems is the company; Dakinis One is what shops and restaurants use every day.',
+      cta: 'Try Dakinis One free',
     },
     services: {
       title: 'Core services',
