@@ -1,9 +1,9 @@
+import { useEffect } from "react";
 import logoAkoenet from "../Akoenet.png";
 import logoStreamAutomator from "../StreamAutomator.png";
 import { DAKINIS_LANDING_PROJECTS } from "./config/landing-projects.js";
 import { dakinisMailtoContact } from "./config/contact.js";
-import { CORE_PRICING_URL, CORE_TRIAL_URL } from "./config/core-links.js";
-import { DAKINIS_URL_HUB } from "./config/product-urls.js";
+import { CORE_PRICING_URL, CORE_SAVINGS_CALC_URL, CORE_TRIAL_URL } from "./config/core-links.js";
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import CorporateShell from "./components/CorporateShell.jsx";
@@ -32,18 +32,18 @@ const ECOSYSTEM_PRODUCTS = DAKINIS_PRODUCTS.filter(
 export default function LandingPage() {
   const { locale, t } = useLanguage();
 
+  useEffect(() => {
+    dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.LANDING_PAGE_VIEW, { surface: "home" });
+  }, []);
+
   return (
     <CorporateShell activeNav="home">
       <section className="px-6 py-20 text-center md:py-24" aria-labelledby="hero-heading">
         <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-cyan-400">{t.hero.kicker}</p>
         <h1 id="hero-heading" className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
           {t.hero.line1}
-          <span className="block text-cyan-400">{t.hero.line2}</span>
+          <span className="mt-3 block text-2xl font-semibold text-cyan-400 md:text-3xl">{t.hero.line2}</span>
         </h1>
-        <p className="mx-auto mb-4 max-w-2xl text-gray-300 md:text-lg">{t.hero.body}</p>
-        {t.hero.modules ? (
-          <p className="mx-auto mb-8 max-w-xl text-sm text-gray-500">{t.hero.modules}</p>
-        ) : null}
         <ul className="mx-auto mb-10 flex max-w-2xl flex-wrap justify-center gap-2 text-sm text-gray-300">
           {(t.hero.pillars || []).map((item) => (
             <li key={item} className="rounded-full border border-white/15 px-3 py-1">
@@ -61,13 +61,27 @@ export default function LandingPage() {
           >
             {t.hero.ctaPrimary}
           </a>
+          {(t.hero.trustBullets || []).length > 0 ? (
+            <ul className="mt-1 flex max-w-lg flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-gray-300">
+              {(t.hero.trustBullets || []).map((item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <span className="text-emerald-400" aria-hidden>
+                    ✓
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <div className="flex flex-wrap justify-center gap-3 text-sm">
             <a
               href={CORE_PRICING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
-              onClick={() => trackOneCta("landing_hero_pricing")}
+              onClick={() =>
+                dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.LANDING_PRICING_CLICKED, { from: "landing_hero" })
+              }
             >
               {t.hero.ctaPricing}
             </a>
@@ -78,8 +92,44 @@ export default function LandingPage() {
               {t.hero.ctaProducts}
             </a>
           </div>
-          {t.hero.trustLine ? (
-            <p className="mt-2 max-w-md text-xs text-gray-500">{t.hero.trustLine}</p>
+        </div>
+      </section>
+
+      <section
+        id="ahorro"
+        className="border-y border-cyan-500/20 bg-gradient-to-br from-cyan-950/40 via-[#111117] to-purple-950/30 px-6 py-16 md:py-20"
+        aria-labelledby="savings-heading"
+      >
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-cyan-400">{t.savings.kicker}</p>
+          <h2 id="savings-heading" className="mb-4 text-3xl font-bold leading-tight md:text-4xl">
+            {t.savings.headline}
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-gray-300">{t.savings.body}</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={CORE_SAVINGS_CALC_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-cyan-500 px-8 py-3.5 font-semibold text-black hover:bg-cyan-400"
+              onClick={() =>
+                dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.LANDING_SAVINGS_CALC_CLICKED, { from: "landing_savings" })
+              }
+            >
+              {t.savings.ctaCalc}
+            </a>
+            <a
+              href={CORE_TRIAL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-gray-600 px-8 py-3.5 font-semibold transition hover:bg-gray-800"
+              onClick={() => trackOneCta("landing_savings_trial")}
+            >
+              {t.savings.ctaTrial}
+            </a>
+          </div>
+          {t.savings.footnote ? (
+            <p className="mx-auto mt-5 max-w-xl text-xs text-gray-500">{t.savings.footnote}</p>
           ) : null}
         </div>
       </section>
