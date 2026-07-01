@@ -7,6 +7,7 @@ import { CORE_PRICING_URL, CORE_SAVINGS_CALC_URL, CORE_TRIAL_URL } from "./confi
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import CorporateShell from "./components/CorporateShell.jsx";
+import ProductHeroPreview from "./components/ProductHeroPreview.jsx";
 import { useLanguage } from "./context/LanguageContext.jsx";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "./utils/analytics.js";
 
@@ -38,59 +39,76 @@ export default function LandingPage() {
 
   return (
     <CorporateShell activeNav="home">
-      <section className="px-6 py-20 text-center md:py-24" aria-labelledby="hero-heading">
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-cyan-400">{t.hero.kicker}</p>
-        <h1 id="hero-heading" className="mb-6 text-4xl font-bold leading-tight md:text-6xl">
-          {t.hero.line1}
-          <span className="mt-3 block text-2xl font-semibold text-cyan-400 md:text-3xl">{t.hero.line2}</span>
-        </h1>
-        <ul className="mx-auto mb-10 flex max-w-2xl flex-wrap justify-center gap-2 text-sm text-gray-300">
-          {(t.hero.pillars || []).map((item) => (
-            <li key={item} className="rounded-full border border-white/15 px-3 py-1">
-              ✓ {item}
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-col items-center gap-4">
-          <a
-            href={CORE_TRIAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-2xl bg-cyan-500 px-10 py-4 text-lg font-bold text-black shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400 md:text-xl"
-            onClick={() => trackOneCta("landing_hero_primary")}
-          >
-            {t.hero.ctaPrimary}
-          </a>
-          {(t.hero.trustBullets || []).length > 0 ? (
-            <ul className="mt-1 flex max-w-lg flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-gray-300">
-              {(t.hero.trustBullets || []).map((item) => (
-                <li key={item} className="flex items-center gap-1.5">
-                  <span className="text-emerald-400" aria-hidden>
-                    ✓
-                  </span>
-                  {item}
+      <section className="px-6 py-16 md:py-20" aria-labelledby="hero-heading">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+          <div className="order-1 text-center lg:order-1 lg:text-left">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-cyan-400">{t.hero.kicker}</p>
+            <h1 id="hero-heading" className="mb-4 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+              {t.hero.line1}
+              <span className="mt-3 block text-xl font-semibold text-cyan-400 md:text-2xl lg:text-3xl">{t.hero.line2}</span>
+            </h1>
+            {t.hero.socialProof ? (
+              <p className="mb-4 text-sm text-gray-400">{t.hero.socialProof}</p>
+            ) : null}
+          </div>
+
+          <div className="order-2 mx-auto w-full lg:order-2 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:self-center">
+            <ProductHeroPreview tabs={t.hero.previewTabs} caption={t.hero.previewCaption} />
+          </div>
+
+          <div className="order-3 text-center lg:order-1 lg:col-start-1 lg:row-start-2 lg:text-left">
+            <ul className="mb-8 flex flex-wrap justify-center gap-2 text-sm text-gray-300 lg:justify-start">
+              {(t.hero.pillars || []).map((item) => (
+                <li key={item} className="rounded-full border border-white/15 px-3 py-1">
+                  ✓ {item}
                 </li>
               ))}
             </ul>
-          ) : null}
-          <div className="flex flex-wrap justify-center gap-3 text-sm">
-            <a
-              href={CORE_PRICING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
-              onClick={() =>
-                dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.LANDING_PRICING_CLICKED, { from: "landing_hero" })
-              }
-            >
-              {t.hero.ctaPricing}
-            </a>
-            <a
-              href="#ecosistema"
-              className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
-            >
-              {t.hero.ctaProducts}
-            </a>
+            <div className="flex flex-col items-center gap-3 lg:items-start">
+              <a
+                href={CORE_TRIAL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl bg-cyan-500 px-10 py-4 text-lg font-bold text-black shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400 md:text-xl"
+                onClick={() => trackOneCta("landing_hero_primary")}
+              >
+                {t.hero.ctaPrimary}
+              </a>
+              {t.hero.ctaSubtext ? (
+                <p className="text-sm text-gray-400">{t.hero.ctaSubtext}</p>
+              ) : null}
+              {(t.hero.trustBullets || []).length > 0 ? (
+                <ul className="flex max-w-lg flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-gray-300 lg:justify-start">
+                  {(t.hero.trustBullets || []).map((item) => (
+                    <li key={item} className="flex items-center gap-1.5">
+                      <span className="text-emerald-400" aria-hidden>
+                        ✓
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              <div className="flex flex-wrap justify-center gap-3 text-sm lg:justify-start">
+                <a
+                  href={CORE_PRICING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
+                  onClick={() =>
+                    dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.LANDING_PRICING_CLICKED, { from: "landing_hero" })
+                  }
+                >
+                  {t.hero.ctaPricing}
+                </a>
+                <a
+                  href="#ecosistema"
+                  className="rounded-xl border border-gray-600 px-5 py-2.5 transition hover:bg-gray-800"
+                >
+                  {t.hero.ctaProducts}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -102,9 +120,12 @@ export default function LandingPage() {
       >
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-cyan-400">{t.savings.kicker}</p>
-          <h2 id="savings-heading" className="mb-4 text-3xl font-bold leading-tight md:text-4xl">
+          <h2 id="savings-heading" className="mb-3 text-3xl font-bold leading-tight md:text-4xl">
             {t.savings.headline}
           </h2>
+          {t.savings.credibility ? (
+            <p className="mx-auto mb-4 max-w-2xl text-sm text-cyan-200/90">{t.savings.credibility}</p>
+          ) : null}
           <p className="mx-auto mb-8 max-w-2xl text-gray-300">{t.savings.body}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
