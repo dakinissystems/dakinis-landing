@@ -13,6 +13,20 @@ function navigate(path) {
   window.dispatchEvent(new PopStateEvent("popstate"));
 }
 
+function scrollToContactSection() {
+  document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+}
+
+function goToContact() {
+  const pathNow = window.location.pathname.replace(/\/$/, "") || "/";
+  if (pathNow === "/") {
+    scrollToContactSection();
+    return;
+  }
+  window.addEventListener("popstate", () => window.setTimeout(scrollToContactSection, 80), { once: true });
+  navigate("/#contacto");
+}
+
 function FooterSep() {
   return (
     <span className="text-gray-600" aria-hidden>
@@ -66,7 +80,16 @@ export default function CorporateShell({ children, activeNav = "" }) {
               <a href="/hub" className={navClass("hub")}>{t.nav.hub}</a>
               <a href="/productos" className={navClass("productos")} onClick={(e) => { e.preventDefault(); navigate("/productos"); }}>{t.nav.productos}</a>
               <a href="/servicios" className={navClass("servicios")} onClick={(e) => { e.preventDefault(); navigate("/servicios"); }}>{t.nav.servicios}</a>
-              <a href="/#contacto" className={navClass("contacto")}>{t.nav.contacto}</a>
+              <a
+                href="/#contacto"
+                className={navClass("contacto")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  goToContact();
+                }}
+              >
+                {t.nav.contacto}
+              </a>
             </nav>
             <a
               href={CORE_LOGIN_URL}
@@ -124,27 +147,6 @@ export default function CorporateShell({ children, activeNav = "" }) {
             <a
               href={`mailto:${DAKINIS_CONTACT_EMAIL}`}
               className="text-gray-400 transition hover:text-cyan-300"
-            >
-              {t.legal.footer.contact}
-            </a>
-            <FooterSep />
-            <a
-              href="/#contacto"
-              className="text-gray-400 transition hover:text-cyan-300"
-              onClick={(e) => {
-                e.preventDefault();
-                const scrollContact = () =>
-                  document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
-                const pathNow = window.location.pathname.replace(/\/$/, "") || "/";
-                if (pathNow === "/") {
-                  scrollContact();
-                  return;
-                }
-                window.addEventListener("popstate", () => window.setTimeout(scrollContact, 80), {
-                  once: true
-                });
-                navigate("/");
-              }}
             >
               {t.nav.contacto}
             </a>
