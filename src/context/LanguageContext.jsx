@@ -29,6 +29,10 @@ export function LanguageProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.lang = locale === 'es' ? 'es' : 'en'
+    const meta = translations[locale]?.meta
+    if (meta?.title) document.title = meta.title
+    const desc = document.querySelector('meta[name="description"]')
+    if (desc && meta?.description) desc.setAttribute('content', meta.description)
   }, [locale])
 
   const value = useMemo(

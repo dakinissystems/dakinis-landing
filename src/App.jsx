@@ -5,6 +5,7 @@ import HubRedirectPage from "./pages/HubRedirectPage.jsx";
 import ProductsIndexPage from "./pages/ProductsIndexPage.jsx";
 import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 import ServicesPage from "./pages/ServicesPage.jsx";
+import SemLandingPage from "./pages/SemLandingPage.jsx";
 import { LanguageProvider } from "./context/LanguageContext.jsx";
 
 const LEGAL_ROUTES = {
@@ -59,6 +60,9 @@ function AppShell() {
   }
   if (path === "/servicios") {
     return <ServicesPage />;
+  }
+  if (path === "/empieza" || path === "/deja-excel" || path === "/prueba-gratis") {
+    return <SemLandingPage />;
   }
 
   return <LandingPage />;

@@ -23,36 +23,133 @@ export const translations = {
       contacto: 'Contacto',
       hub: 'Hub',
       login: 'Login',
-      tryOne: 'Probar gratis',
+      tryOne: 'Empezar gratis',
       ventaja: 'Ventaja',
       dakinisOne: 'Dakinis One',
       proceso: 'Proceso',
       trabajos: 'Trabajos',
     },
+    meta: {
+      title: 'Dakinis Systems | Sistema operativo para empresas modernas',
+      description:
+        'Plataforma con Hub, facturación e IA integrada. Dakinis One para operaciones diarias. Un login, un lugar.',
+    },
     hero: {
-      kicker: 'Dakinis One',
-      line1: 'Deja de gestionar tu negocio con Excel.',
-      line2: 'CRM, Inventario, Reservas, WhatsApp e IA en un solo sistema.',
-      pillars: ['Clientes', 'Inventario', 'Ventas', 'WhatsApp', 'Reservas', 'IA'],
-      ctaPrimary: 'Probar Dakinis One gratis',
-      ctaSubtext: 'Empieza a ahorrar tiempo — gratis',
-      ctaPricing: 'Ver planes',
-      ctaProducts: 'Ver más productos',
+      kicker: 'Dakinis Platform',
+      line1: 'Un sistema operativo para empresas modernas',
+      line2:
+        'Gestiona clientes, operaciones, facturación e inteligencia artificial desde un único lugar.',
+      line2Hub: 'Empieza en tu Hub',
+      line2Tail: 'y abre los productos que necesites — sin duplicar logins ni herramientas.',
+      reinforcement: 'Todo vive en el Hub. Tu negocio comienza aquí.',
+      trustBar: 'Un login · Un Hub · Una factura · IA con el conocimiento de tu empresa',
+      ctaPrimary: 'Empezar gratis',
+      ctaSecondary: 'Descubrir Dakinis',
+      ctaPricing: 'Ver precios',
+      ctaProducts: 'Ver productos',
       ctaHub: 'Entrar al Hub',
-      ctaSecondary: 'Ver servicios',
-      trustBullets: [
-        'Sin instalación',
-        'Desde cualquier dispositivo',
-        'Prueba gratuita',
-        'Configuración en minutos',
-      ],
+      ctaOne: 'Probar Dakinis One',
+      trustBullets: ['Sin tarjeta en el registro', 'Planes desde Growth', 'Hecho en España'],
+      hubPreviewCaption: 'Tu escritorio Dakinis — Mi día, apps y notificaciones en un solo sitio.',
+      hubPreview: {
+        windowTitle: 'hub.dakinissystems.com',
+        alt: 'Dakinis Hub — escritorio empresarial',
+        miDia: 'Mi día',
+        appsTitle: 'Tus productos',
+        widgets: ['3 citas hoy', '2 alertas', '1 factura'],
+        apps: {
+          one: 'Dakinis One',
+          finanzas: 'Finanzas',
+          sa: 'StreamAutomator',
+          akoe: 'AkoeNet',
+        },
+      },
       previewCaption: 'Capturas reales de la demo — no mockups.',
       previewTabs: {
         dashboard: 'Dashboard',
         clientes: 'Clientes',
         inventario: 'Inventario',
       },
-      socialProof: 'Desarrollado tras más de 15 años creando software empresarial.',
+    },
+    problem: {
+      title: 'Deja de pegar cinco herramientas con Excel',
+      body:
+        'CRM por un lado. Facturación por otro. WhatsApp en el móvil. Documentos en carpetas. Y una IA genérica que no conoce tu negocio.',
+      body2:
+        'Cada mes pagas más suscripciones. Tu equipo pierde tiempo. Los datos no se hablan.',
+      close: 'Dakinis no es otra app más.',
+      closePlatform: 'Es Dakinis Platform — y todo empieza en tu Hub.',
+    },
+    platform: {
+      title: 'Dakinis Platform',
+      lead:
+        'Entras una vez. Abres cualquier producto. Usuarios, datos e IA compartidos para todo tu negocio.',
+      leadHub: 'Todo vive en el Hub.',
+      pillars: [
+        { title: 'Hub', desc: 'Tu escritorio: Mi día, agenda, apps y notificaciones en un solo sitio' },
+        { title: 'Dakinis One', desc: 'Operaciones diarias: clientes, citas, inventario, facturación' },
+        { title: 'IA Dakinis', desc: 'Asistente que usa el conocimiento de tu empresa — no respuestas genéricas' },
+        { title: 'Conocimiento', desc: 'Documentación y FAQ alimentan búsqueda y copilot' },
+      ],
+    },
+    howItWorks: {
+      title: 'Tres pasos. Sin caos.',
+      steps: [
+        { title: 'Entra', desc: 'Un login para toda la plataforma' },
+        { title: 'Abre tu Hub', desc: 'Mi día, widgets y acceso a productos con un clic' },
+        { title: 'Trabaja', desc: 'Dakinis One para operar; LifeFlow, StreamAutomator u otros si los activas' },
+      ],
+    },
+    hub: {
+      eyebrow: 'Tu escritorio Dakinis',
+      title: 'Todo empieza en el Hub',
+      lead: 'Empieza en tu Hub. Tu negocio comienza aquí.',
+      body:
+        'No es un menú de enlaces. Es tu workspace: qué toca hoy, alertas, accesos a productos y preferencias de tu equipo.',
+      body2:
+        'Abre Dakinis One, Finanzas o StreamAutomator desde el mismo sitio — con la misma sesión.',
+      bullets: [
+        'Mi día y widgets con datos reales',
+        'Launcher con SSO a productos conectados',
+        'Notificaciones cross-producto',
+        'Acceso por tenant: tú decides qué ve cada negocio',
+      ],
+    },
+    dakinisOneProduct: {
+      eyebrow: 'Producto · Business OS',
+      title: 'Dakinis One — gestiona el día a día',
+      lead:
+        'El producto principal para operar tu negocio: CRM, citas, inventario, restaurante, mensajes y copilot integrado.',
+      bullets: [
+        'Clientes y pipeline',
+        'Citas y reservas',
+        'Stock e inventario (Growth+)',
+        'Copilot con contexto de tu negocio (Pro)',
+      ],
+      cta: 'Probar Dakinis One',
+    },
+    ai: {
+      title: 'IA que conoce tu negocio',
+      lead:
+        'La IA de Dakinis no es un chat suelto. La IA conoce tu negocio — documentos, FAQ, datos del tenant — para responder, asistir y automatizar desde el Hub o Dakinis One.',
+      sub: 'Pregunta en lenguaje natural. Obtén respuestas con contexto, no plantillas vacías.',
+    },
+    knowledge: {
+      title: 'Ctrl+K en toda la plataforma',
+      lead:
+        'Sube políticas, manuales y FAQ. Busca en segundos. El copilot y la búsqueda comparten la misma memoria de empresa.',
+      quote: 'Tu empresa pregunta; Dakinis responde con tus datos.',
+    },
+    pricing: {
+      title: 'Un plan claro para empezar',
+      lead:
+        'Empieza con lo esencial. Sube a Growth cuando necesites más módulos e IA. Pro para equipos que usan WhatsApp y copilot avanzado.',
+      cta: 'Ver precios',
+      footnote: 'Facturación segura con Stripe · Cancela cuando quieras',
+    },
+    beta: {
+      title: 'Beta abierta para pilotos en España',
+      lead: 'Estamos buscando el primer negocio que centralice operaciones en Dakinis Platform.',
     },
     savings: {
       kicker: 'Ahorro real',
@@ -77,8 +174,9 @@ export const translations = {
       cta: 'Empezar con Dakinis One',
     },
     ecosystem: {
-      title: 'Más del ecosistema Dakinis',
-      lead: 'Cuando quieras ir más allá del negocio del día a día, estos productos comparten la misma base y soporte.',
+      title: 'Más productos desde el Hub',
+      lead: 'Misma cuenta, mismo Hub. Abre estos productos cuando los necesites.',
+      footnote: 'Más productos se abren desde el Hub con la misma cuenta.',
     },
     productosHome: {
       title: 'Otros productos',
@@ -176,15 +274,43 @@ export const translations = {
       },
     },
     contacto: {
-      title: 'Hablemos de tu proyecto',
-      body:
-        'Cuentanos que necesitas y te proponemos una solucion tecnica, tiempos y roadmap de desarrollo.',
-      email: 'Escribir por email',
+      title: 'Tu negocio en un solo sistema',
+      body: 'Regístrate, entra al Hub y prueba Dakinis One con tu equipo. Sin instalar cinco herramientas distintas.',
+      ctaAccount: 'Crear cuenta',
+      email: 'Hablar con nosotros',
       whatsapp: 'Contactar por WhatsApp',
       whatsappFabHint: 'También puedes escribirnos por WhatsApp con el botón flotante verde.',
-      emailSubject: 'Proyecto a medida',
+      emailSubject: 'Interés en Dakinis Platform',
+      consultoriaEmailSubject: 'Proyecto a medida',
+      consultoriaTitle: 'Hablemos de tu proyecto',
+      consultoriaBody:
+        'Cuentanos que necesitas y te proponemos una solucion tecnica, tiempos y roadmap de desarrollo.',
+    },
+    sem: {
+      meta: {
+        title: 'Dakinis One — Deja Excel, gestiona tu negocio | Dakinis Systems',
+        description:
+          'Deja de gestionar tu negocio con Excel. CRM, inventario, reservas, WhatsApp e IA en un solo sistema. Prueba gratuita.',
+      },
+      hero: {
+        kicker: 'Dakinis One',
+        line1: 'Deja de gestionar tu negocio con Excel.',
+        line2: 'CRM, Inventario, Reservas, WhatsApp e IA en un solo sistema.',
+        pillars: ['Clientes', 'Inventario', 'Ventas', 'WhatsApp', 'Reservas', 'IA'],
+        ctaPrimary: 'Probar Dakinis One gratis',
+        ctaSubtext: 'Empieza a ahorrar tiempo — gratis',
+        ctaPricing: 'Ver planes',
+        socialProof: 'Desarrollado tras más de 15 años creando software empresarial.',
+        trustBullets: [
+          'Sin instalación',
+          'Desde cualquier dispositivo',
+          'Prueba gratuita',
+          'Configuración en minutos',
+        ],
+      },
     },
     footer: {
+      tagline: 'Dakinis Systems — Un sistema operativo para empresas modernas.',
       copyright: '© {year} Dakinis Systems.',
       rights: 'Todos los derechos reservados.',
       navAria: 'Legal y contacto',
@@ -217,36 +343,129 @@ export const translations = {
       contacto: 'Contact',
       hub: 'Hub',
       login: 'Log in',
-      tryOne: 'Try free',
+      tryOne: 'Get started free',
       ventaja: 'Why us',
       dakinisOne: 'Dakinis One',
       proceso: 'Process',
       trabajos: 'Work',
     },
+    meta: {
+      title: 'Dakinis Systems | Operating system for modern businesses',
+      description:
+        'Platform with Hub, billing, and integrated AI. Dakinis One for daily operations. One login, one place.',
+    },
     hero: {
-      kicker: 'Dakinis One',
-      line1: 'Stop running your business on Excel.',
-      line2: 'CRM, inventory, bookings, WhatsApp and AI in one system.',
-      pillars: ['Customers', 'Inventory', 'Sales', 'WhatsApp', 'Bookings', 'AI'],
-      ctaPrimary: 'Try Dakinis One free',
-      ctaSubtext: 'Start saving time — free',
-      ctaPricing: 'View plans',
-      ctaProducts: 'More products',
+      kicker: 'Dakinis Platform',
+      line1: 'An operating system for modern businesses',
+      line2: 'Manage customers, operations, billing, and AI from one place.',
+      line2Hub: 'Start in your Hub',
+      line2Tail: 'and open the products you need — without duplicate logins or tools.',
+      reinforcement: 'Everything lives in the Hub. Your business starts here.',
+      trustBar: 'One login · One Hub · One bill · AI that knows your business',
+      ctaPrimary: 'Get started free',
+      ctaSecondary: 'Discover Dakinis',
+      ctaPricing: 'View pricing',
+      ctaProducts: 'View products',
       ctaHub: 'Open Hub',
-      ctaSecondary: 'View services',
-      trustBullets: [
-        'No installation',
-        'Works on any device',
-        'Free trial',
-        'Set up in minutes',
-      ],
+      ctaOne: 'Try Dakinis One',
+      trustBullets: ['No card required to sign up', 'Plans from Growth', 'Built in Spain'],
+      hubPreviewCaption: 'Your Dakinis desktop — My day, apps, and notifications in one place.',
+      hubPreview: {
+        windowTitle: 'hub.dakinissystems.com',
+        alt: 'Dakinis Hub — business workspace',
+        miDia: 'My day',
+        appsTitle: 'Your products',
+        widgets: ['3 appointments', '2 alerts', '1 invoice'],
+        apps: {
+          one: 'Dakinis One',
+          finanzas: 'Finances',
+          sa: 'StreamAutomator',
+          akoe: 'AkoeNet',
+        },
+      },
       previewCaption: 'Real screenshots from the demo — not mockups.',
       previewTabs: {
         dashboard: 'Dashboard',
         clientes: 'Customers',
         inventario: 'Inventory',
       },
-      socialProof: 'Built after 15+ years delivering business software.',
+    },
+    problem: {
+      title: 'Stop gluing five tools together with Excel',
+      body:
+        'CRM on one side. Billing on another. WhatsApp on your phone. Documents in folders. And generic AI that does not know your business.',
+      body2: 'Every month you pay more subscriptions. Your team loses time. Data does not talk.',
+      close: 'Dakinis is not another app.',
+      closePlatform: 'It is Dakinis Platform — and everything starts in your Hub.',
+    },
+    platform: {
+      title: 'Dakinis Platform',
+      lead: 'Sign in once. Open any product. Shared users, data, and AI across your business.',
+      leadHub: 'Everything lives in the Hub.',
+      pillars: [
+        { title: 'Hub', desc: 'Your desktop: My day, schedule, apps, and notifications in one place' },
+        { title: 'Dakinis One', desc: 'Daily operations: customers, appointments, inventory, billing' },
+        { title: 'Dakinis AI', desc: 'Assistant that uses your company knowledge — not generic answers' },
+        { title: 'Knowledge', desc: 'Docs and FAQ power search and copilot' },
+      ],
+    },
+    howItWorks: {
+      title: 'Three steps. No chaos.',
+      steps: [
+        { title: 'Sign in', desc: 'One login for the whole platform' },
+        { title: 'Open your Hub', desc: 'My day, widgets, and one-click access to products' },
+        { title: 'Work', desc: 'Dakinis One to operate; LifeFlow, StreamAutomator, or others when you need them' },
+      ],
+    },
+    hub: {
+      eyebrow: 'Your Dakinis desktop',
+      title: 'Everything starts in the Hub',
+      lead: 'Start in your Hub. Your business starts here.',
+      body:
+        'Not a link menu. Your workspace: what is due today, alerts, product access, and team preferences.',
+      body2: 'Open Dakinis One, Finances, or StreamAutomator from the same place — same session.',
+      bullets: [
+        'My day and widgets with real data',
+        'SSO launcher to connected products',
+        'Cross-product notifications',
+        'Per-tenant access: you control what each business sees',
+      ],
+    },
+    dakinisOneProduct: {
+      eyebrow: 'Product · Business OS',
+      title: 'Dakinis One — run your day to day',
+      lead:
+        'The main product to run your business: CRM, appointments, inventory, restaurant, messaging, and integrated copilot.',
+      bullets: [
+        'Customers and pipeline',
+        'Appointments and bookings',
+        'Stock and inventory (Growth+)',
+        'Copilot with your business context (Pro)',
+      ],
+      cta: 'Try Dakinis One',
+    },
+    ai: {
+      title: 'AI that knows your business',
+      lead:
+        'Dakinis AI is not a standalone chat. It knows your business — documents, FAQ, tenant data — to answer, assist, and automate from the Hub or Dakinis One.',
+      sub: 'Ask in plain language. Get contextual answers, not empty templates.',
+    },
+    knowledge: {
+      title: 'Ctrl+K across the platform',
+      lead:
+        'Upload policies, manuals, and FAQ. Search in seconds. Copilot and search share the same company memory.',
+      quote: 'Your company asks; Dakinis answers with your data.',
+    },
+    pricing: {
+      title: 'A clear plan to start',
+      lead:
+        'Start with essentials. Move to Growth when you need more modules and AI. Pro for teams using WhatsApp and advanced copilot.',
+      cta: 'View pricing',
+      footnote: 'Secure billing with Stripe · Cancel anytime',
+    },
+    beta: {
+      title: 'Open beta for pilots in Spain',
+      lead: 'We are looking for the first business to centralize operations on Dakinis Platform.',
     },
     savings: {
       kicker: 'Real savings',
@@ -271,8 +490,9 @@ export const translations = {
       cta: 'Get started with Dakinis One',
     },
     ecosystem: {
-      title: 'More from the Dakinis ecosystem',
-      lead: 'When you need more than day-to-day operations, these products share the same foundation and support.',
+      title: 'More products from the Hub',
+      lead: 'Same account, same Hub. Open these products when you need them.',
+      footnote: 'More products open from the Hub with the same account.',
     },
     productosHome: {
       title: 'Other products',
@@ -370,14 +590,42 @@ export const translations = {
       },
     },
     contacto: {
-      title: "Let's talk about your project",
-      body: 'Tell us what you need and we will propose a technical approach, timeline, and roadmap.',
-      email: 'Email us',
+      title: 'Your business in one system',
+      body: 'Sign up, enter the Hub, and try Dakinis One with your team. Without installing five separate tools.',
+      ctaAccount: 'Create account',
+      email: 'Talk to us',
       whatsapp: 'WhatsApp',
       whatsappFabHint: 'You can also message us on WhatsApp using the green floating button.',
-      emailSubject: 'Custom software project',
+      emailSubject: 'Interest in Dakinis Platform',
+      consultoriaEmailSubject: 'Custom software project',
+      consultoriaTitle: "Let's talk about your project",
+      consultoriaBody: 'Tell us what you need and we will propose a technical approach, timeline, and roadmap.',
+    },
+    sem: {
+      meta: {
+        title: 'Dakinis One — Stop Excel, run your business | Dakinis Systems',
+        description:
+          'Stop running your business on Excel. CRM, inventory, bookings, WhatsApp and AI in one system. Free trial.',
+      },
+      hero: {
+        kicker: 'Dakinis One',
+        line1: 'Stop running your business on Excel.',
+        line2: 'CRM, inventory, bookings, WhatsApp and AI in one system.',
+        pillars: ['Customers', 'Inventory', 'Sales', 'WhatsApp', 'Bookings', 'AI'],
+        ctaPrimary: 'Try Dakinis One free',
+        ctaSubtext: 'Start saving time — free',
+        ctaPricing: 'View plans',
+        socialProof: 'Built after 15+ years delivering business software.',
+        trustBullets: [
+          'No installation',
+          'Works on any device',
+          'Free trial',
+          'Set up in minutes',
+        ],
+      },
     },
     footer: {
+      tagline: 'Dakinis Systems — An operating system for modern businesses.',
       copyright: '© {year} Dakinis Systems.',
       rights: 'All rights reserved.',
       navAria: 'Legal and contact',

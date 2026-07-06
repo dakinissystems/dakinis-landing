@@ -2,7 +2,8 @@ import { dakinisCompanyTagline } from "@dakinis/shared-brand/company";
 import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
 import logoGrande from "../../Logo Grande.jpeg";
 import logoSimple from "../../Logo Simple.jpeg";
-import { CORE_LOGIN_URL, CORE_TRIAL_URL } from "../config/core-links.js";
+import { CORE_LOGIN_URL } from "../config/core-links.js";
+import { HUB_START_URL } from "../config/hub-links.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
 import DraggableWhatsappButton from "./DraggableWhatsappButton.jsx";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
@@ -62,9 +63,9 @@ export default function CorporateShell({ children, activeNav = "" }) {
           <div className="flex items-center gap-3 md:gap-5">
             <nav aria-label={String(t.nav.label)} className="hidden items-center gap-5 text-sm text-gray-300 md:flex">
               <a href="/" className={navClass("home")} onClick={(e) => { e.preventDefault(); navigate("/"); }}>{t.nav.empresa}</a>
+              <a href="/hub" className={navClass("hub")}>{t.nav.hub}</a>
               <a href="/productos" className={navClass("productos")} onClick={(e) => { e.preventDefault(); navigate("/productos"); }}>{t.nav.productos}</a>
               <a href="/servicios" className={navClass("servicios")} onClick={(e) => { e.preventDefault(); navigate("/servicios"); }}>{t.nav.servicios}</a>
-              <a href="/#casos" className={navClass("casos")}>{t.nav.casos}</a>
               <a href="/#contacto" className={navClass("contacto")}>{t.nav.contacto}</a>
             </nav>
             <a
@@ -74,12 +75,12 @@ export default function CorporateShell({ children, activeNav = "" }) {
               {t.nav.login}
             </a>
             <a
-              href={CORE_TRIAL_URL}
+              href={HUB_START_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-semibold text-black hover:bg-cyan-400"
               onClick={() =>
-                dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.CTA_DAKINIS_ONE_CLICKED, { from: "header_try" })
+                dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.HUB_OPENED, { from: "header_try" })
               }
             >
               {t.nav.tryOne}
@@ -99,7 +100,7 @@ export default function CorporateShell({ children, activeNav = "" }) {
             {String(t.footer.copyright).replace("{year}", String(new Date().getFullYear()))}{" "}
             {t.footer.rights}
           </p>
-          <p className="max-w-xl text-xs text-gray-600">{tagline}</p>
+          <p className="max-w-xl text-xs text-gray-600">{t.footer.tagline || tagline}</p>
           <nav
             className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2"
             aria-label={String(t.footer.navAria)}
