@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { dakinisCompanyTagline } from "@dakinis/shared-brand/company";
 import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
 import logoGrande from "../../Logo Grande.jpeg";
@@ -61,6 +62,7 @@ function FooterNavLink({ href, children, onNavigate }) {
 export default function CorporateShell({ children, activeNav = "" }) {
   const { locale, setLocale, t } = useLanguage();
   const tagline = dakinisCompanyTagline(locale);
+  const copyrightYear = useMemo(() => new Date().getFullYear(), []);
 
   const navClass = (id) =>
     activeNav === id ? "text-cyan-300 font-semibold" : "transition hover:text-cyan-300";
@@ -80,16 +82,9 @@ export default function CorporateShell({ children, activeNav = "" }) {
               <a href="/hub" className={navClass("hub")}>{t.nav.hub}</a>
               <a href="/productos" className={navClass("productos")} onClick={(e) => { e.preventDefault(); navigate("/productos"); }}>{t.nav.productos}</a>
               <a href="/servicios" className={navClass("servicios")} onClick={(e) => { e.preventDefault(); navigate("/servicios"); }}>{t.nav.servicios}</a>
-              <a
-                href="/#contacto"
-                className={navClass("contacto")}
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToContact();
-                }}
-              >
+              <button type="button" className={navClass("contacto")} onClick={goToContact}>
                 {t.nav.contacto}
-              </a>
+              </button>
             </nav>
             <a
               href={CORE_LOGIN_URL}
@@ -120,7 +115,7 @@ export default function CorporateShell({ children, activeNav = "" }) {
       <footer className="border-t border-white/10 px-6 py-10 text-sm text-gray-500">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 text-center">
           <p className="font-medium text-gray-400">
-            {String(t.footer.copyright).replace("{year}", String(new Date().getFullYear()))}{" "}
+            {String(t.footer.copyright).replace("{year}", String(copyrightYear))}{" "}
             {t.footer.rights}
           </p>
           <p className="max-w-xl text-xs text-gray-600">{t.footer.tagline || tagline}</p>

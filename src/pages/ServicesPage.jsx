@@ -57,8 +57,8 @@ export default function ServicesPage() {
       <section className="px-6 py-12">
         <h2 className="mb-8 text-center text-2xl font-bold">{t.proceso.title}</h2>
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
-          {t.proceso.steps.map((step, i) => (
-            <article key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          {t.proceso.steps.map((step) => (
+            <article key={step.kicker} className="rounded-2xl border border-white/10 bg-white/5 p-6">
               <p className="mb-3 text-xs font-bold uppercase tracking-wider text-cyan-300">{step.kicker}</p>
               <p className="text-sm text-gray-300">{step.body}</p>
             </article>
