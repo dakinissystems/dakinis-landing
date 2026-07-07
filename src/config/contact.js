@@ -1,9 +1,6 @@
-import {
-  DAKINIS_CONTACT_EMAIL,
-  dakinisContactWhatsappUrl
-} from "@dakinis/shared-brand/social-links";
+import { dakinisContactWhatsappUrl } from "@dakinis/shared-brand/social-links";
 
-export { DAKINIS_CONTACT_EMAIL, dakinisContactWhatsappUrl };
+export { dakinisContactWhatsappUrl };
 
 /** mailto: con asunto opcional (desde i18n). */
 export function dakinisMailtoContact(subject) {

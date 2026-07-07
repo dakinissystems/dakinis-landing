@@ -43,6 +43,10 @@ function writePosition(position) {
   }
 }
 
+function preventDefaultClick(e) {
+  e.preventDefault();
+}
+
 function WhatsappIcon() {
   return (
     <svg viewBox="0 0 24 24" className="pointer-events-none h-6 w-6 sm:h-7 sm:w-7" aria-hidden focusable="false">
@@ -125,10 +129,6 @@ export default function DraggableWhatsappButton() {
     pointerOriginRef.current = null;
   };
 
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <a
       href={href}
@@ -144,7 +144,7 @@ export default function DraggableWhatsappButton() {
       }}
       aria-label={t.contacto.whatsapp}
       title={t.contacto.whatsapp}
-      onClick={handleClick}
+      onClick={preventDefaultClick}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
