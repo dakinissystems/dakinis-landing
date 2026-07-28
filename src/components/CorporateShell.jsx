@@ -79,7 +79,15 @@ export default function CorporateShell({ children, activeNav = "" }) {
           <div className="flex items-center gap-3 md:gap-5">
             <nav aria-label={String(t.nav.label)} className="hidden items-center gap-5 text-sm text-gray-300 md:flex">
               <a href="/" className={navClass("home")} onClick={(e) => { e.preventDefault(); navigate("/"); }}>{t.nav.empresa}</a>
-              <a href="/hub" className={navClass("hub")}>{t.nav.hub}</a>
+              <a
+                href={HUB_START_URL}
+                className={navClass("hub")}
+                onClick={() =>
+                  dakinisTrackEvent(DAKINIS_ANALYTICS_EVENTS.HUB_OPENED, { from: "header_nav" })
+                }
+              >
+                {t.nav.hub}
+              </a>
               <a href="/productos" className={navClass("productos")} onClick={(e) => { e.preventDefault(); navigate("/productos"); }}>{t.nav.productos}</a>
               <a href="/servicios" className={navClass("servicios")} onClick={(e) => { e.preventDefault(); navigate("/servicios"); }}>{t.nav.servicios}</a>
               <button type="button" className={navClass("contacto")} onClick={goToContact}>

@@ -30,15 +30,15 @@ export const translations = {
       trabajos: 'Trabajos',
     },
     meta: {
-      title: 'Dakinis Systems | Sistema operativo para empresas modernas',
+      title: 'Dakinis Systems | Plataforma operativa modular',
       description:
-        'Plataforma con Hub, facturación e IA integrada. Dakinis One para operaciones diarias. Un login, un lugar.',
+        'Menos herramientas sueltas, más resultados. Hub como escritorio, un login y productos que se conectan. Dakinis One para el día a día.',
     },
     hero: {
       kicker: 'Dakinis Platform',
-      line1: 'Un sistema operativo para empresas modernas',
+      line1: 'Menos herramientas. Más negocio hecho.',
       line2:
-        'Gestiona clientes, operaciones, facturación e inteligencia artificial desde un único lugar.',
+        'Una plataforma operativa modular: Hub, facturación e IA compartidos. Abres solo los productos que necesitas.',
       line2Hub: 'Empieza en tu Hub',
       line2Tail: 'y abre los productos que necesites — sin duplicar logins ni herramientas.',
       reinforcement: 'Todo vive en el Hub. Tu negocio comienza aquí.',
@@ -50,13 +50,13 @@ export const translations = {
       ctaHub: 'Entrar al Hub',
       ctaOne: 'Probar Dakinis One',
       trustBullets: ['Sin tarjeta en el registro', 'Planes desde Growth', 'Hecho en España'],
-      hubPreviewCaption: 'Tu escritorio Dakinis — Mi día, apps y notificaciones en un solo sitio.',
+      hubPreviewCaption: 'Tu escritorio Dakinis — Mi día con KPIs reales (LifeFlow, Stream…) en un solo sitio.',
       hubPreview: {
         windowTitle: 'hub.dakinissystems.com',
         alt: 'Dakinis Hub — escritorio empresarial',
         miDia: 'Mi día',
         appsTitle: 'Tus productos',
-        widgets: ['3 citas hoy', '2 alertas', '1 factura'],
+        widgets: ['Score 72', '1 regla Stream', '1 negocio'],
         apps: {
           one: 'Dakinis One',
           finanzas: 'Finanzas',
@@ -310,7 +310,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Dakinis Systems — Un sistema operativo para empresas modernas.',
+      tagline: 'Dakinis Systems — Plataforma operativa modular. Todo empieza en tu Hub.',
       copyright: '© {year} Dakinis Systems.',
       rights: 'Todos los derechos reservados.',
       navAria: 'Legal y contacto',
@@ -350,14 +350,15 @@ export const translations = {
       trabajos: 'Work',
     },
     meta: {
-      title: 'Dakinis Systems | Operating system for modern businesses',
+      title: 'Dakinis Systems | Modular operations platform',
       description:
-        'Platform with Hub, billing, and integrated AI. Dakinis One for daily operations. One login, one place.',
+        'Fewer disconnected tools, more results. Hub as your desktop, one login, products that connect. Dakinis One for daily work.',
     },
     hero: {
       kicker: 'Dakinis Platform',
-      line1: 'An operating system for modern businesses',
-      line2: 'Manage customers, operations, billing, and AI from one place.',
+      line1: 'Fewer tools. More work done.',
+      line2:
+        'A modular operations platform: shared Hub, billing, and AI. Open only the products you need.',
       line2Hub: 'Start in your Hub',
       line2Tail: 'and open the products you need — without duplicate logins or tools.',
       reinforcement: 'Everything lives in the Hub. Your business starts here.',
@@ -369,13 +370,13 @@ export const translations = {
       ctaHub: 'Open Hub',
       ctaOne: 'Try Dakinis One',
       trustBullets: ['No card required to sign up', 'Plans from Growth', 'Built in Spain'],
-      hubPreviewCaption: 'Your Dakinis desktop — My day, apps, and notifications in one place.',
+      hubPreviewCaption: 'Your Dakinis desktop — My day with real KPIs (LifeFlow, Stream…) in one place.',
       hubPreview: {
         windowTitle: 'hub.dakinissystems.com',
         alt: 'Dakinis Hub — business workspace',
         miDia: 'My day',
         appsTitle: 'Your products',
-        widgets: ['3 appointments', '2 alerts', '1 invoice'],
+        widgets: ['Score 72', '1 Stream rule', '1 business'],
         apps: {
           one: 'Dakinis One',
           finanzas: 'Finances',
@@ -625,7 +626,7 @@ export const translations = {
       },
     },
     footer: {
-      tagline: 'Dakinis Systems — An operating system for modern businesses.',
+      tagline: 'Dakinis Systems — Modular operations platform. Everything starts in your Hub.',
       copyright: '© {year} Dakinis Systems.',
       rights: 'All rights reserved.',
       navAria: 'Legal and contact',

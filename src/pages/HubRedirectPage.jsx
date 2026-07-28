@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { DAKINIS_URL_HUB } from "../config/product-urls.js";
+import { HUB_LOGIN_URL } from "../config/hub-links.js";
 
-/** /hub en la landing redirige al Hub en Core. */
+/** /hub en la landing redirige al login del Hub (no a la landing ni a Core). */
 export default function HubRedirectPage() {
   useEffect(() => {
-    window.location.replace(DAKINIS_URL_HUB);
+    window.location.replace(HUB_LOGIN_URL);
   }, []);
   return (
     <p className="px-6 py-20 text-center text-gray-400">
