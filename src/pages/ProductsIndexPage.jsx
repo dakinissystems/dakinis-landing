@@ -1,6 +1,7 @@
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import CorporateShell from "../components/CorporateShell.jsx";
+import ProductBrandLogo from "../components/ProductBrandLogo.jsx";
 import { useLanguage } from "../context/LanguageContext.jsx";
 import { DAKINIS_URL_CORE } from "../config/product-urls.js";
 
@@ -22,6 +23,9 @@ export default function ProductsIndexPage() {
       <section className="mx-auto grid max-w-5xl gap-6 px-6 pb-20 sm:grid-cols-2">
         {products.map((p) => (
           <article key={p.id} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6 text-left">
+            <div className="mb-4">
+              <ProductBrandLogo productId={p.id} size={64} />
+            </div>
             <h2 className="mb-2 text-xl font-semibold text-cyan-400">{dakinisProductField(p, "name", locale)}</h2>
             <p className="mb-4 text-sm text-gray-400">{dakinisProductField(p, "summary", locale)}</p>
             <div className="flex flex-wrap gap-3">

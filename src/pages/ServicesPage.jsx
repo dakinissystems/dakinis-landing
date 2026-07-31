@@ -1,5 +1,4 @@
-import logoAkoenet from "../../Akoenet.png";
-import logoStreamAutomator from "../../StreamAutomator.png";
+import { getHubProductLogo } from "@dakinis/shared-brand/hub-product-logos";
 import CorporateShell from "../components/CorporateShell.jsx";
 import { DAKINIS_LANDING_PROJECTS } from "../config/landing-projects.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
@@ -7,9 +6,9 @@ import { dakinisMailtoContact } from "../config/contact.js";
 
 const SERVICE_IDS = ["web", "backend", "auto", "devops"];
 
-const PROJECT_LOGOS = {
-  akoenet: logoAkoenet,
-  stream: logoStreamAutomator
+const PROJECT_LOGO_IDS = {
+  akoenet: "akoenet",
+  stream: "streamautomator",
 };
 
 export default function ServicesPage() {
@@ -71,12 +70,12 @@ export default function ServicesPage() {
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
           {DAKINIS_LANDING_PROJECTS.map((project) => {
             const copy = t.trabajos.projects[project.id];
-            const projectLogo = PROJECT_LOGOS[project.id];
+            const projectLogo = getHubProductLogo(PROJECT_LOGO_IDS[project.id] || project.id);
             return (
               <article key={project.id} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6">
                 <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4">
                   <img
-                    src={projectLogo}
+                    src={projectLogo?.src}
                     alt=""
                     width={56}
                     height={56}

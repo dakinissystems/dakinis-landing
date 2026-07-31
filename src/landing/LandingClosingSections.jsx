@@ -1,5 +1,6 @@
 import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
+import ProductBrandLogo from "../components/ProductBrandLogo.jsx";
 import { dakinisMailtoContact } from "../config/contact.js";
 import { CORE_PRICING_URL, CORE_SAVINGS_CALC_URL } from "../config/core-links.js";
 import { HUB_START_URL } from "../config/hub-links.js";
@@ -23,6 +24,9 @@ export default function LandingClosingSections({ t, locale, trackHubCta }) {
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
           {ECOSYSTEM_PRODUCTS.map((p) => (
             <article key={p.id} className="rounded-2xl border border-white/10 bg-[#1A1A22] p-6 text-center">
+              <div className="mb-4 flex justify-center">
+                <ProductBrandLogo productId={p.id} size={72} />
+              </div>
               <h3 className="mb-2 text-lg font-semibold text-gray-100">{dakinisProductField(p, "name", locale)}</h3>
               <p className="mb-4 text-sm text-gray-400">{dakinisProductField(p, "summary", locale)}</p>
               <div className="flex flex-wrap justify-center gap-3 text-sm">

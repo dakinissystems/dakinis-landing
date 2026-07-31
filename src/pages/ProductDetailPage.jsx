@@ -3,6 +3,7 @@ import { dakinisProductField } from "@dakinis/shared-brand/i18n";
 import { dakinisGetProduct } from "@dakinis/shared-brand/products";
 import { CORE_LOGIN_URL, CORE_TRIAL_URL } from "../config/core-links.js";
 import CorporateShell from "../components/CorporateShell.jsx";
+import ProductBrandLogo from "../components/ProductBrandLogo.jsx";
 import { useLanguage } from "../context/LanguageContext.jsx";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
 
@@ -29,6 +30,9 @@ export default function ProductDetailPage({ productId }) {
   return (
     <CorporateShell activeNav="productos">
       <section className="mx-auto max-w-3xl px-6 py-16 md:py-20">
+        <div className="mb-6">
+          <ProductBrandLogo productId={product.id} size={88} />
+        </div>
         <p className="mb-2 text-sm text-cyan-400">{t.productos.kicker}</p>
         <h1 className="mb-4 text-3xl font-bold">{dakinisProductField(product, "name", locale)}</h1>
         <p className="mb-6 text-gray-300 leading-relaxed">{copy?.body || product.summary}</p>
