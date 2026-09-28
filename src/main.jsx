@@ -4,6 +4,7 @@ import { dakinisInitAnalytics } from '@dakinis/shared-brand/analytics'
 import { bootstrapDesAppearance } from '../packages/shared-theme/src/theme-engine.js'
 import './index.css'
 import App from './App.jsx'
+import { LanguageProvider } from './context/LanguageContext.jsx'
 
 const landingTheme = bootstrapDesAppearance({
   product: 'landing',
