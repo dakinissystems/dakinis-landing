@@ -1,8 +1,8 @@
 import { useMemo } from "react";
 import { dakinisCompanyTagline } from "@dakinis/shared-brand/company";
 import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
-import logoGrande from "../../Logo Grande.jpeg";
-import logoSimple from "../../Logo Simple.jpeg";
+import logoGrande from "../assets/logo-grande.jpeg";
+import logoSimple from "../assets/logo-simple.jpeg";
 import { CORE_LOGIN_URL } from "../config/core-links.js";
 import { HUB_START_URL } from "../config/hub-links.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
