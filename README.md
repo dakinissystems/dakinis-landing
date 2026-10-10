@@ -1,35 +1,49 @@
 # Dakinis Systems — Landing
 
-Landing corporativa — [dakinissystems.com](https://dakinissystems.com)
+Sitio corporativo público: propuesta de valor, productos y entrada al ecosistema.
 
-> **Repo:** [dakinissystems/dakinis-landing](https://github.com/dakinissystems/dakinis-landing)
+| | |
+|---|---|
+| **Producción** | https://dakinissystems.com |
+| **Repo** | [dakinissystems/dakinis-landing](https://github.com/dakinissystems/dakinis-landing) |
+| **Copy / mensaje** | [MESSAGING](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/MESSAGING.md) · [LANDING-COPY](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/LANDING-COPY.md) |
 
 ## Stack
 
 React 19 · Vite · Tailwind CSS
 
-## Scripts
+## Local
 
 ```bash
 npm install
 npm run dev
+```
+
+```bash
 npm run build
 npm run preview
 ```
 
-## Despliegue
+| Comando | Uso |
+|---------|-----|
+| `npm install` | Dependencias |
+| `npm run dev` | Desarrollo |
+| `npm run build` | Build estático `dist/` |
+| `npm run preview` | Preview del build |
 
-Railway / static `dist/`. Mensaje → [MESSAGING](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/MESSAGING.md) · copy → [LANDING-COPY](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/LANDING-COPY.md)
+## Contenido
 
-## Documentación del ecosistema
+- Textos y posicionamiento: docs canónicas `MESSAGING` / `LANDING-COPY` (no inventar claims en el código).
+- Assets de marca: paquetes DES / `src/assets` según el repo.
 
-Canónica en [dakinis-systems/docs](https://github.com/dakinissystems/dakinis-systems/tree/main/docs):
+Tras cambiar copy o enlaces: `npm run build` y comprobar rutas a productos (Core, Hub, SA, AkoeNet).
 
-| Doc | Contenido |
-|-----|-----------|
-| [Índice](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/README.md) | Source of truth |
-| [SYSTEMS](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/SYSTEMS.md) | Mapa productos / plataforma |
-| [STATUS](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/STATUS.md) | Estado / go-live |
-| [OPERATIONS](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/OPERATIONS.md) | Deploy, health, monitorización |
-| [SECURITY](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/SECURITY.md) | Checklist seguridad P0–P1 |
-| [ARCHITECTURE](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/ARCHITECTURE.md) | Arquitectura |
+## Deploy
+
+Railway (o estático `dist/`). Dominio: `dakinissystems.com` (Cloudflare).
+
+## Docs canónicas
+
+Estado → [STATUS](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/STATUS.md) ·
+Mapa → [SYSTEMS](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/SYSTEMS.md) ·
+Índice → [docs](https://github.com/dakinissystems/dakinis-systems/tree/main/docs)
