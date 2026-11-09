@@ -6,7 +6,7 @@ Sitio corporativo público: propuesta de valor, productos y entrada al ecosistem
 |---|---|
 | **Producción** | https://dakinissystems.com |
 | **Repo** | [dakinissystems/dakinis-landing](https://github.com/dakinissystems/dakinis-landing) |
-| **Copy / mensaje** | [MESSAGING](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/MESSAGING.md) · [LANDING-COPY](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/LANDING-COPY.md) |
+| **Copy / mensaje** | [MESSAGING](https://github.com/dakinissystems/dakinis-systems/blob/main/docs/company/MESSAGING.md) |
 
 ## Stack
 
@@ -33,7 +33,7 @@ npm run preview
 
 ## Contenido
 
-- Textos y posicionamiento: docs canónicas `MESSAGING` / `LANDING-COPY` (no inventar claims en el código).
+- Textos y posicionamiento: `MESSAGING` en dakinis-systems (no inventar claims en el código). `TEMP_LANDING_ESTRUCTURA.md` está retirado.
 - Assets de marca: paquetes DES / `src/assets` según el repo.
 
 Tras cambiar copy o enlaces: `npm run build` y comprobar rutas a productos (Core, Hub, SA, AkoeNet).
