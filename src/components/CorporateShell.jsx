@@ -4,7 +4,7 @@ import { DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
 import logoGrande from "../assets/logo-grande.jpeg";
 import logoSimple from "../assets/logo-simple.jpeg";
 import { CORE_LOGIN_URL } from "../config/core-links.js";
-import { HUB_START_URL } from "../config/hub-links.js";
+import { HUB_REGISTER_URL, HUB_START_URL } from "../config/hub-links.js";
 import { useLanguage } from "../context/LanguageContext.jsx";
 import DraggableWhatsappButton from "./DraggableWhatsappButton.jsx";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
@@ -101,7 +101,7 @@ export default function CorporateShell({ children, activeNav = "" }) {
               {t.nav.login}
             </a>
             <a
-              href={HUB_START_URL}
+              href={HUB_REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-semibold text-black hover:bg-cyan-400"

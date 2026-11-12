@@ -28,3 +28,6 @@ export const HUB_LOGIN_URL = `${hubBase}/login`;
 
 /** Alias used by CTAs — always Hub login. */
 export const HUB_START_URL = HUB_LOGIN_URL;
+
+/** Alta de cuenta. El escritorio solo muestra el login. */
+export const HUB_REGISTER_URL = `${hubBase}/login/register`;

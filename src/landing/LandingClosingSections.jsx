@@ -3,7 +3,7 @@ import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
 import ProductBrandLogo from "../components/ProductBrandLogo.jsx";
 import { dakinisMailtoContact } from "../config/contact.js";
 import { CORE_PRICING_URL, CORE_SAVINGS_CALC_URL } from "../config/core-links.js";
-import { HUB_START_URL } from "../config/hub-links.js";
+import { HUB_REGISTER_URL } from "../config/hub-links.js";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
 
 const ECOSYSTEM_PRODUCTS = DAKINIS_PRODUCTS.filter(
@@ -100,7 +100,7 @@ export default function LandingClosingSections({ t, locale, trackHubCta }) {
               {t.savings.ctaCalc}
             </a>
             <a
-              href={HUB_START_URL}
+              href={HUB_REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl border border-gray-600 px-8 py-3.5 font-semibold transition hover:bg-gray-800"
@@ -125,7 +125,7 @@ export default function LandingClosingSections({ t, locale, trackHubCta }) {
         <p className="mx-auto mb-6 max-w-2xl text-sm text-black/85">{t.contacto.body}</p>
         <div className="flex flex-wrap justify-center gap-3">
           <a
-            href={HUB_START_URL}
+            href={HUB_REGISTER_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-xl bg-black px-8 py-4 font-semibold text-white hover:bg-gray-900"

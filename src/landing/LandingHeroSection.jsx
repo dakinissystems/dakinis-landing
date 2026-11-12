@@ -1,5 +1,5 @@
 import HubHeroPreview from "../components/HubHeroPreview.jsx";
-import { HUB_START_URL } from "../config/hub-links.js";
+import { HUB_REGISTER_URL } from "../config/hub-links.js";
 import { CORE_PRICING_URL } from "../config/core-links.js";
 import { dakinisTrackEvent, DAKINIS_ANALYTICS_EVENTS } from "../utils/analytics.js";
 
@@ -31,7 +31,7 @@ export default function LandingHeroSection({ t, trackHubCta }) {
           ) : null}
           <div className="flex flex-col items-center gap-3 lg:items-start">
             <a
-              href={HUB_START_URL}
+              href={HUB_REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl bg-cyan-500 px-10 py-4 text-lg font-bold text-black shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400 md:text-xl"

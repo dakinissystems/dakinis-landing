@@ -1,6 +1,6 @@
 import HubHeroPreview from "../components/HubHeroPreview.jsx";
 import ProductHeroPreview from "../components/ProductHeroPreview.jsx";
-import { HUB_START_URL } from "../config/hub-links.js";
+import { HUB_REGISTER_URL } from "../config/hub-links.js";
 import { CORE_TRIAL_URL } from "../config/core-links.js";
 
 export default function LandingStorySections({ t, trackHubCta, trackOneCta }) {
@@ -70,7 +70,7 @@ export default function LandingStorySections({ t, trackHubCta, trackOneCta }) {
               ))}
             </ul>
             <a
-              href={HUB_START_URL}
+              href={HUB_REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block rounded-xl bg-cyan-500 px-8 py-3 font-semibold text-black hover:bg-cyan-400"
