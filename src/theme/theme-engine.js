@@ -2,7 +2,7 @@
  * DES theme engine — dark / light / system + high-contrast + persistence.
  */
 
-import { applyDesTheme, DAKINIS_THEMES } from "./themes.js";
+import { applyDesTheme, DAKINIS_THEMES } from "@dakinissystems/shared-brand/themes";
 
 export const DES_COLOR_MODES = /** @type {const} */ (["dark", "light", "system"]);
 
