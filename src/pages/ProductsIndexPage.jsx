@@ -1,5 +1,5 @@
-import { dakinisProductField } from "@dakinis/shared-brand/i18n";
-import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
+import { dakinisProductField } from "@dakinissystems/shared-brand/i18n";
+import { DAKINIS_PRODUCTS } from "@dakinissystems/shared-brand/products";
 import CorporateShell from "../components/CorporateShell.jsx";
 import ProductBrandLogo from "../components/ProductBrandLogo.jsx";
 import { useLanguage } from "../context/LanguageContext.jsx";

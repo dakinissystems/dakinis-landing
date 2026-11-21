@@ -1,4 +1,4 @@
-import { getHubProductLogo } from "@dakinis/shared-brand/hub-product-logos";
+import { getHubProductLogo } from "@dakinissystems/shared-brand/hub-product-logos";
 import CorporateShell from "../components/CorporateShell.jsx";
 import { DAKINIS_LANDING_PROJECTS } from "../config/landing-projects.js";
 import { useLanguage } from "../context/LanguageContext.jsx";

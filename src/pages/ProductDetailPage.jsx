@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { dakinisProductField } from "@dakinis/shared-brand/i18n";
-import { dakinisGetProduct } from "@dakinis/shared-brand/products";
+import { dakinisProductField } from "@dakinissystems/shared-brand/i18n";
+import { dakinisGetProduct } from "@dakinissystems/shared-brand/products";
 import { CORE_LOGIN_URL, CORE_TRIAL_URL } from "../config/core-links.js";
 import CorporateShell from "../components/CorporateShell.jsx";
 import ProductBrandLogo from "../components/ProductBrandLogo.jsx";

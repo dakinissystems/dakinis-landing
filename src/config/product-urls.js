@@ -5,6 +5,6 @@ export {
   DAKINIS_URL_LANDING,
   DAKINIS_URL_STREAMAUTOMATOR,
   DAKINIS_URL_AKOENET
-} from "@dakinis/shared-brand";
+} from "@dakinissystems/shared-brand";
 
 export { DAKINIS_LANDING_PROJECTS } from "./landing-projects.js";

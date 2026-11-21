@@ -1,4 +1,4 @@
-import { DAKINIS_URL_AKOENET, DAKINIS_URL_STREAMAUTOMATOR } from "@dakinis/shared-brand";
+import { DAKINIS_URL_AKOENET, DAKINIS_URL_STREAMAUTOMATOR } from "@dakinissystems/shared-brand";
 
 export const DAKINIS_LANDING_PROJECTS = [
   { id: "akoenet", name: "AkoeNet", url: DAKINIS_URL_AKOENET },
