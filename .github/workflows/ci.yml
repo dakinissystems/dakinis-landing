@@ -25,5 +25,17 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN || github.token }}
         run: |
-          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          set -euo pipefail
+          if [ -f package-lock.json ]; then
+            npm ci || install_rc=$?
+          else
+            npm install || install_rc=$?
+          fi
+          if [ "${install_rc:-0}" -ne 0 ]; then
+            echo "::error::npm install failed (often 403 read_package)."
+            echo "Grant Actions read on @dakinissystems/shared-brand to this repo:"
+            echo "  GitHub → Packages → shared-brand → Package settings → Manage Actions access → add dakinis-landing (Read)"
+            echo "Or set repo secret NODE_AUTH_TOKEN to a PAT with read:packages."
+            exit "${install_rc}"
+          fi
           npm run build
