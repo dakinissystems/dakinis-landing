@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          registry-url: https://npm.pkg.github.com
+          scope: "@dakinissystems"
+
+      - name: Install from GitHub Packages + build
+        env:
+          # Prefer explicit PAT if set; otherwise GITHUB_TOKEN (needs package Actions access).
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN != '' && secrets.NODE_AUTH_TOKEN || github.token }}
+        run: |
+          set -euo pipefail
+          # Ensure auth is present in the user npmrc that setup-node created.
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" >> "$NPM_CONFIG_USERCONFIG"
+          npm install || install_rc=$?
+          if [ "${install_rc:-0}" -ne 0 ]; then
+            echo "::error::npm install failed (often 403 read_package)."
+            echo "1) Package settings → shared-brand → Manage Actions access → dakinis-landing (Read)"
+            echo "2) Or repo secret NODE_AUTH_TOKEN = PAT with read:packages"
+            exit "${install_rc}"
+          fi
+          npm run build
