@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@dakinis/shared-brand/tokens.css";
+@import "@dakinissystems/shared-brand/tokens.css";
 
 * {
   box-sizing: border-box;

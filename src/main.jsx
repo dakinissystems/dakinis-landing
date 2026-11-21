@@ -1,6 +1,6 @@
 import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
-import { dakinisInitAnalytics } from '@dakinis/shared-brand/analytics'
+import { dakinisInitAnalytics } from '@dakinissystems/shared-brand/analytics'
 import { bootstrapDesAppearance } from '../packages/shared-theme/src/theme-engine.js'
 import './index.css'
 import App from './App.jsx'

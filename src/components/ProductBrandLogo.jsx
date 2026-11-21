@@ -1,4 +1,4 @@
-import { getHubProductLogo } from "@dakinis/shared-brand/hub-product-logos";
+import { getHubProductLogo } from "@dakinissystems/shared-brand/hub-product-logos";
 
 /**
  * Logo de marca de producto (assets hub-logos con alpha), no iconos Lucide.

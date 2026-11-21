@@ -1,4 +1,4 @@
-import { getHubProductLogo } from "@dakinis/shared-brand/hub-product-logos";
+import { getHubProductLogo } from "@dakinissystems/shared-brand/hub-product-logos";
 import ProductBrandLogo from "./ProductBrandLogo.jsx";
 
 const MOCK_APPS = [

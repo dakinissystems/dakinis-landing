@@ -1,5 +1,5 @@
-import { dakinisProductField } from "@dakinis/shared-brand/i18n";
-import { DAKINIS_PRODUCTS } from "@dakinis/shared-brand/products";
+import { dakinisProductField } from "@dakinissystems/shared-brand/i18n";
+import { DAKINIS_PRODUCTS } from "@dakinissystems/shared-brand/products";
 import ProductBrandLogo from "../components/ProductBrandLogo.jsx";
 import { dakinisMailtoContact } from "../config/contact.js";
 import { CORE_PRICING_URL, CORE_SAVINGS_CALC_URL } from "../config/core-links.js";

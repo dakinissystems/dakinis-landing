@@ -1,4 +1,4 @@
-import { dakinisContactWhatsappUrl, DAKINIS_CONTACT_EMAIL } from "@dakinis/shared-brand/social-links";
+import { dakinisContactWhatsappUrl, DAKINIS_CONTACT_EMAIL } from "@dakinissystems/shared-brand/social-links";
 
 export { dakinisContactWhatsappUrl };
 
